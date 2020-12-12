@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin_id: 1
+  title: MyString
+  body: MyString
+  place: MyString
+  start_time: 2020-12-12 06:46:03
+  end_time: 2020-12-12 06:46:03
+
+two:
+  admin_id: 1
+  title: MyString
+  body: MyString
+  place: MyString
+  start_time: 2020-12-12 06:46:03
+  end_time: 2020-12-12 06:46:03

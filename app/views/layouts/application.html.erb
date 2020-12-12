@@ -10,6 +10,29 @@
   </head>
 
   <body>
+      <header>
+        <div class ="container">
+            <div class ="header-logo">
+                <%= link_to "RISICARE", root_path, class: "header-logo" %>
+            </div>
+            <div class ="header-list">
+                <div class ="row">
+                    <div class ="col-xs-3">
+                        <li><%= link_to "INFORMATION", informations_path, class: "header-list" %></li>
+                    </div>
+                    <div class ="col-xs-3">
+                        <li><%= link_to "EVENT", events_path, class: "header-list" %></li>
+                    </div>
+                    <div class ="col-xs-3">
+                        <li><%= link_to "SCHOOL", school_path, class: "header-list" %></li>
+                    </div>
+                    <div class ="col-xs-3">
+                        <li><%= link_to "STAFF", staff_path, class: "header-list" %></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </header>
     <%= yield %>
   </body>
 </html>
