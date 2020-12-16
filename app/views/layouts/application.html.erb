@@ -4,7 +4,8 @@
     <title>RisicareHP</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/91f50bbecd.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,25 +13,47 @@
   <body>
       <header>
         <div class ="container">
-            <div class ="header-logo">
-                <%= link_to "RISICARE", root_path, class: "header-logo" %>
-            </div>
-            <div class ="header-list">
-                <div class ="row">
-                    <div class ="col-xs-3">
-                        <li><%= link_to "INFORMATION", informations_path, class: "header-list" %></li>
-                    </div>
-                    <div class ="col-xs-3">
-                        <li><%= link_to "EVENT", events_path, class: "header-list" %></li>
-                    </div>
-                    <div class ="col-xs-3">
-                        <li><%= link_to "SCHOOL", school_path, class: "header-list" %></li>
-                    </div>
-                    <div class ="col-xs-3">
-                        <li><%= link_to "STAFF", staff_path, class: "header-list" %></li>
+            <% if admin_signed_in? %>
+                <div class ="header-logo">
+                    <%= link_to "RISICARE", root_path, class: "header-logo" %>
+                </div>
+                <div class ="header-list">
+                    <div class ="row">
+                        <div class ="col-xs-4">
+                            <li><%= link_to "INFORMATION", admin_informations_path, class: "header-list" %></li>
+                        </div>
+                        <div class ="col-xs-4">
+                            <li><%= link_to "EVENT", admin_events_path, class: "header-list" %></li>
+                        </div>
+                        <div class ="col-xs-4">
+                            <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "header-list" %></li>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% else %>
+                <div class ="header-logo">
+                    <%= link_to "RISICARE", root_path, class: "header-logo" %>
+                    <%= link_to  new_admin_session_path do %>
+                        <i class="fas fa-fish"></i>
+                    <% end %>
+                </div>
+                <div class ="header-list">
+                    <div class ="row">
+                        <div class ="col-xs-3">
+                            <li><%= link_to "INFORMATION", informations_path, class: "header-list" %></li>
+                        </div>
+                        <div class ="col-xs-3">
+                            <li><%= link_to "EVENT", events_path, class: "header-list" %></li>
+                        </div>
+                        <div class ="col-xs-3">
+                            <li><%= link_to "SCHOOL", school_path, class: "header-list" %></li>
+                        </div>
+                        <div class ="col-xs-3">
+                            <li><%= link_to "STAFF", staff_path, class: "header-list" %></li>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
         </div>
       </header>
     <%= yield %>

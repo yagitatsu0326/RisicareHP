@@ -17,7 +17,7 @@
 @import "bootstrap";
 
 *{
-	padding :0;
+	padding:0;
 	margin: 0;
 	box-sizing: border-box;
 }
@@ -36,17 +36,26 @@ body {
 	padding-left: 20px;
 	max-width: 1000px;
 }
+.title-box {
+	text-align: center;
+	color: white;
+}
+.body-box {
+	color: white;
+}
+/* ------------ ヘッダー -----------　*/
 header {
-	position: fixed;
+	//position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 50px;
-	z-index: 999;
+	//z-index: 999;
 		.header-logo {
 			text-align: center;
 			color: white;
 			text-decoration: none;
+			font-size: 50px;
 		}
 		.header-list {
 			color: white;
@@ -55,6 +64,90 @@ header {
 					list-style: none;
 					color: white;
 					text-decoration: none;
+					font-size: 20px;
 				}
 		}
 }
+/* -------------------------------　*/
+/* ------------- top -------------　*/
+
+.top-image {
+	margin-top: 70px;
+		img {
+			height: 600px;
+			width: 100%;
+		}
+
+}
+.text-box {
+	h3{
+		color: white;
+	}
+	p {
+		color: white;
+	}
+}
+/* -------------------------------　*/
+/* ------------ login ------------　*/
+.login-body-container {
+	margin-top: 50px;
+	padding-top: 30px;
+	text-align: center;
+		.control-label {
+			margin-top: 15px;
+			color: white;
+		}
+		.form-box {
+			color: black;
+		}
+		.lavel {
+			color: white;
+		}
+}
+/* -------------------------------　*/
+
+
+
+@media screen and (max-width: 480px) {
+/* ------------ ヘッダー -----------　*/
+	.header-list {
+		display: none;
+	}
+/* -------------------------------　*/
+
+/* ------------- top -------------　*/
+	.top-image {
+		margin-top: 20px;
+			img {
+				height: 200px;
+			}
+	}
+/* -------------------------------　*/
+}
+
+/* ---------- admin info ---------　*/
+.image-squar {
+	display: block;
+	margin: 0 auto;
+}
+input#information_image {
+	width: 300px;
+	margin: 10px auto 0;
+}
+.form-group {
+	width: 300px;
+	margin: 0 auto;
+		textarea.form-control {
+			height: 300px;
+		}
+}
+.post-form {
+	margin: 10px auto;
+}
+.button {
+	text-align: center;
+}
+/* -------------------------------　*/
+
+
+
