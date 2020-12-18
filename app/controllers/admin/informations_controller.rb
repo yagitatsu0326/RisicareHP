@@ -19,6 +19,7 @@ class Admin::InformationsController < ApplicationController
 	end
 
 	def show
+		@information = Information.find(params[:id])
 	end
 
 	def edit
