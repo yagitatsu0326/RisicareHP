@@ -23,12 +23,23 @@ class Admin::InformationsController < ApplicationController
 	end
 
 	def edit
+		@information = Information.find(params[:id])
 	end
 
 	def update
+		@information = Information.find(params[:id])
+		@information.admin_id = current_admin.id
+		if @information.update(information_params)
+			redirect_to admin_informations_path
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
+		@information = Information.find(params[:id])
+		@information.destroy
+		redirect_to admin_informations_path
 	end
 
 	private
