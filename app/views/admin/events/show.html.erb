@@ -1,0 +1,17 @@
+<div class ="container">
+	<div class ="title-box row">
+		<h2 class ="col-xs-8 col-xs-offset-2">SCHEDULE</h2>
+		<div class ="col-xs-8 col-xs-offset-2">
+			<%= link_to edit_admin_event_path(@event.id) do %>
+				<p>EDIT</p>
+			<% end %>
+		</div>
+	</div>
+	<div class ="body-box">
+		<div class ="event-show-box row">
+			<h3 class ="col-xs-12"><%= @event.title %> in <%= @event.place %></h3>
+			<p class ="col-xs-12"><%= l @event.start_time, format: :short %> ~ <%= l @event.end_time, format: :short %></p>
+			<div class ="col-xs-12"><%=safe_join(@event.body.split("\n"),tag(:br))%></div>
+		</div>
+	</div>
+</div>

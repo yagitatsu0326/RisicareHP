@@ -1,0 +1,32 @@
+<div class ="container">
+	<div class ="title-box row">
+		<h2 class ="col-xs-8 col-xs-offset-2">SCHEDULE</h2>
+	</div>
+	<div class ="body-box">
+		<div id ="calendar"></div>
+			<div class ="event-index-box">
+			<div class="row">
+				<div class="col-xs-12">
+					<table>
+						<tr class ="row">
+							<th class="col-xs-2">日付</th>
+							<th class="col-xs-3">時間</th>
+							<th class="col-xs-3"></th>
+							<th class="col-xs-3">場所</th>
+							<th class="col-xs-1"></th>
+						</tr>
+						<tr class ="row">
+							<% @events.each do |event| %>
+								<td class="col-xs-2"><%= event.title %></td>
+								<td class="col-xs-3"><%= event.place %></td>
+								<td class="col-xs-3"><%= l event.start_time, format: :short %></td>
+								<td class="col-xs-3"><%= l event.end_time, format: :short %></td>
+								<td class="col-xs-1"><%= link_to "詳細", event_path(event.id) %></td>
+							<% end %>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
