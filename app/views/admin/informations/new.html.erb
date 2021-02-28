@@ -1,25 +1,32 @@
-<div class ="container">
-	<div class ="title-box row">
-		<h2 class ="col-xs-8 col-xs-offset-2">INFORMATION</h2>
+<div class ="info-content col-md-9 col-lg-10 col-sm-12">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class ="title-box">
+				<span>Risicare</span>
+				<h2>INFORMATION</h2>
+			</div>
+		</div>
 	</div>
-	<div class ="body-box row">
-		<div class ="col-xs-10 col-xs-offset-1">
-			<%= form_with model:@information, url:admin_informations_path, local: true do |f| %>
-				<%= render 'layouts/error_messages', model: f.object %>
-				<div class ="information_image row">
-					<%= attachment_image_tag @information, :image, :fill,300,300,  class: "image-squar", fallback:"logo.jpg", size:'300x300'%>
-				</div>
-				<%= f.attachment_field :image %>
-				<div class ="form-group row">
-					<%= f.text_field :title, class: "post-form form-control col-xs-12", placeholder: "タイトル" %>
-				</div>
-				<div class ="form-group row">
-					<%= f.text_area :body, class: "post-form form-control col-xs-12", placeholder: "詳細"%>
-				</div>
-				<div class ="button row">
-					<%= f.submit "投稿", class: "btn submit-btn btn-lg" %>
-				</div>
-			<% end %>
+	<div class ="body-box">
+		<div class="info-post-box row">
+			<div class="col-xs-12">
+				<%= form_with model:@information, url:admin_informations_path, local: true do |f| %>
+					<%= render 'layouts/error_messages', model: f.object %>
+					<div class ="information_image row">
+						<%= attachment_image_tag @information, :image, :fill,300,300,  class: "image-squar", fallback:"logo.jpg", size:'300x300'%>
+					</div>
+					<%= f.attachment_field :image %>
+					<div class ="form-group row">
+						<%= f.text_field :title, class: "post-form form-control col-xs-12", placeholder: "タイトル" %>
+					</div>
+					<div class ="form-group row">
+						<%= f.text_area :body, class: "post-form form-control col-xs-12", placeholder: "詳細"%>
+					</div>
+					<div class ="button row">
+						<%= f.submit "投稿", class: "btn submit-btn btn-lg" %>
+					</div>
+				<% end %>				
+			</div>			
 		</div>
 	</div>
 </div>

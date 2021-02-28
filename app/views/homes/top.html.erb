@@ -1,45 +1,53 @@
-<div class ="container">
-	<div class ="top-image clearfix">
-		 <%= image_tag 'top-image.jpg' %>
-	</div>
-	<div class ="text-box">
-		<h3>-MESSAGE-</h3>
-		<p>Risicare(リジカーレ)とは、ラテン語で「勇気を持って試みる」という意味です</p>
-		<p>当クラブでは、技術の向上だけではなく、自身で考えてプレーするために必要な戦術を理解して試合で活きる指導を行います。</p>
-		<p>バスケットボールを通じて、本気で楽しみ　闘い　人との繋がりや違い　お互いをリスペクト　思いやりの心　</p>
-		<p>感謝の心　そして、自分らしさを学ぶ中で、<span>自分で自分の殻を破ってアップデート</span>していけるように、</p>
-		<p>夢に向かい積極的に挑戦する大切さや一歩踏み出す勇気を育てます。</p>
-		<p>今いる環境が全てではなく、世界を知り、考え、自分で一歩踏み出し行動できる人へと楽しみながら共に成長していきましょう。</p>
-		<p>子供たちがバスケットボールをできる機会や環境を増やし、バスケットボールを通じて出会った仲間が将来かけがえのないものになると信じています。</p>
-		<p>当クラブに関わってくれた子供たちが巣立った時、素晴らしいクラブだったと思っていただけるよう日々努力致します。</p>
-	</div>
-	<div class ="info-box">
-		<h3>-TOPIC-</h3>
-		<div class ="info-index-box row">
-			<% @informations.each do |information| %>
-				<div class ="col-xs-12 col-md-4">
-					<div class ="row">
-						<div class ="col-xs-12">
-							<%= information.created_at.strftime('%Y/%m/%d ') %>
+<div class="main-content col-md-9 col-lg-10 col-sm-12">
+	<div class="row">
+		<div class="col-lg-8 col-md-12 col-sm-12">
+			<div class="about-box">
+				<div class="about-text">
+					<h2><ABBR>ABOUT US</ABBR></h2>
+					<p>abcdefghijklmnopqrstu</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-12 col-sm-12">
+			<%= link_to staff_path do %>
+				<div class="staff-box">
+					<div class="goki-box">
+						<div class="goki-img"></div>
+						<div class="goki-mask-text">
+							<h3>八木　龍弘</h3>
 						</div>
 					</div>
-					<div class ="row">
-						<div class ="col-xs-12">
-							<%= information.title %>
-						</div>
-					</div>
-					<div class ="row">
-						<div class ="col-xs-12">
-							<%= link_to information_path(information.id) do %>
-								<%= attachment_image_tag information, :image, :fill, 300,300, class: "info-image" %>
-							<% end %>
+					<div class="yagi-box">
+						<div class="yagi-img"></div>
+						<div class="yagi-mask-text">
+							<h3>北村　豪希</h3>
 						</div>
 					</div>
 				</div>
 			<% end %>
 		</div>
-	</div>
-	<div class ="event-box">
-		<h3>-SCHEDULE-</h3>
+		<div class="col-lg-8 col-md-12">
+			 <div class="info-box">
+			 	<% @informations.each do |information| %>
+				 	<%= link_to information_path(information.id) do %>
+				 		<div class="info-container row">
+						 	<div class="col-lg-4">
+						 		<%= attachment_image_tag information, :image, :fill, 150,150, class: "info-image"%>
+						 	</div>
+						 	<div class="info-text col-lg-8">
+						 		<h3><%= information.title %></h3>
+						 		<p><%= information.body %></p>
+						 		<p><%= information.created_at.strftime('%Y/%m/%d ') %></p>
+						 	</div>
+						 </div>
+				 	<% end %>
+			 	<% end %>
+			 </div>
+		</div>
+
+		<div class="sponsor col-lg-4 col-md-12 col-sm-12">
+			<div class="event-box">スケジュール</div>
+			<div class="sponsor-box">スポンサー</div>
+		</div>
 	</div>
 </div>

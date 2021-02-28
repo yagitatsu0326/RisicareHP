@@ -28,63 +28,162 @@
   	clor: both;
 }
 body {
-	background-color: #4a4a44;
-	color: white;
+	background-color: #f5f6f8;
+	color: black;
 }
 .container{
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 20px;
 	padding-left: 20px;
-	max-width: 1000px;
+	width: 100%;
 }
 .title-box {
 	text-align: center;
 }
-/* ------------ ヘッダー -----------　*/
-header {
-	//position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 50px;
-	//z-index: 999;
-		.header-logo {
-			text-align: center;
-			color: white;
-			text-decoration: none;
-			font-size: 50px;
-		}
-		.header-list {
-			color: white;
-				li{
-					text-align: center;
-					list-style: none;
-					color: white;
-					text-decoration: none;
+/* ----------  サイドバー ----------　*/
+.main-sidebar{
+		.main-navbar {
+		     padding: 20px 5px;
+				img {
+					max-width: 25px;
+					line-height: 60px;
+				}
+				.header-text {
 					font-size: 20px;
+					vertical-align: middle;
+				}
+		 }
+		ul{
+			list-style: none;
+				li{
+					padding: 10px;
+					border-bottom: 1px solid #e1e5eb;
+					padding: .9375rem 1.5625rem;
 				}
 		}
 }
+ 
+
 /* -------------------------------　*/
 /* ------------- top -------------　*/
+.main-content {
+	background: #f5f6f8;
+		.about-box {
+			background-image: url("logo2.jpg");
+			background-size: cover;
+			background-position: center;
+			border-radius: 20px;
+			height: 300px;
+			margin-top: 20px;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+				.about-text {
+					width: 40%;
+					height: 300px;
+					background-color: rgba(0, 0, 0, 0.5);
+					text-align: center;
+					padding-top: 115px;
+					color: white;
+					border-radius: 0 20px 20px 0;
+    				float: right;
+				}
 
-.top-image {
-	margin-top: 70px;
-		img {
-			height: 600px;
-			width: 100%;
 		}
+		.staff-box{
+			margin-top: 20px;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+				.goki-box {
+					background-image: url("goki.jpg");
+					height: 300px;
+					width: 50%;
+					background-size: cover;
+					background-position: center;
+					float: left;
+					border-radius: 20px 0 0 20px;
+					position: relative;
+						.goki-mask-text {
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							top: 0;
+							left: 0;
+							color: #fff;
+							background-color: rgba(0,0,0,0.65);
+							border-radius: 20px 0 0 20px;
+							opacity: 0;
+							transition: .3s ease-in-out;
+							text-align: center;
+							padding-top: 80px;
+							color: #fff;
+						}
+				}
+				.goki-box:hover{
+					.goki-mask-text {
+						opacity: 1;
+					}
+				}
+				.yagi-box {
+					background-image: url("yagi.jpg");
+					height: 300px;
+					width: 50%;
+					background-size: cover;
+					background-position: center;
+					float: right;
+					border-radius: 0 20px 20px 0;
+					position: relative;
+					overflow: hidden;
+						.yagi-mask-text {
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							top: 0;
+							left: 0;
+							color: #fff;
+							background-color: rgba(0,0,0,0.65);
+							border-radius: 0 20px 20px 0;
+							opacity: 0;
+							transition: .3s ease-in-out;
+							text-align: center;
+							padding-top: 80px;
+							color: #fff						}
+				}
+				.yagi-box:hover{
+					.yagi-mask-text {
+						opacity: 1;
+					}
+				}
+		}
+		.info-box{
+			border-radius: 20px;
+			margin-top: 20px;
+			text-align: center;
+		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		    background-color: white;
+			    .info-container {
+			    	padding: 10px;
+						.info-image{
+							border-radius: 20px;
+						}
+						.info-text{
+							text-align: left;
+						}
+			    }
+		}
+		.sponsor-box{
+			background-color: white;
+			border-radius: 20px;
+			height: 300px;
+			margin-top: 20px;
+		}
+		.event-box{
+			background-color: white;
+			border-radius: 20px;
+			height: 300px;
+			margin-top: 20px;
+		}
+}
 
-}
-.text-box {
-	h3{
-		color: white;
-	}
-	p {
-		color: white;
-	}
-}
+
 /* -------------------------------　*/
 /* ------------ login ------------　*/
 .login-body-container {
@@ -120,6 +219,13 @@ header {
 /* -------------------------------　*/
 
 /* ------------ event ------------　*/
+.info-content{
+		.body-box{
+				div#calendar{
+					padding: 10px;
+				}
+		}
+}
 .admin-event-new-box {
 	margin-top: 50px;
 	padding-top: 30px;
@@ -146,40 +252,86 @@ td.fc-day.fc-widget-content.fc-sat.fc-today {
 /* -------------------------------　*/
 
 /* ------------- info ------------　*/
-.image-squar {
-	display: block;
-	margin: 0 auto;
-}
-input#information_image {
-	width: 300px;
-	margin: 10px auto 0;
-}
-.form-group {
-	width: 300px;
-	margin: 0 auto;
-		textarea.form-control {
-			height: 300px;
+.info-content{
+	background: #f5f6f8;
+		.title-box{
+			text-align: left;
+				span{
+					letter-spacing: .125rem;
+				    color: #818ea3;
+				    font-size: .625rem;
+				}
+				h2{
+					font-size: 1.625rem;
+					font-weight: 500;
+					line-height: 1;
+					margin: 0;
+					padding: 0;				
+				}
 		}
-}
-.post-form {
-	margin: 10px auto;
-}
-.button {
-	text-align: center;
-}
-.info-index-box {
-		.info-image {
-			margin-bottom: 20px;
+		.body-box{
+				border-radius: 20px;
+				margin-top: 20px;
+				text-align: center;
+			    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+			    background: white;
+			    height: auto;
+				    .info-index-box {
+				    	padding: 10px;
+				    		.info-container{
+				    			padding: 10px;
+									.info-image{
+										border-radius: 20px;
+									}
+									.info-text{
+										text-align: left;			    			
+						    		}
+				    		}
+				    }
+				    .info-show-box {
+				    	padding: 10px 10px 100px 10px;
+				    	margin-bottom: 50px;
+							.info-image{
+								border-radius: 20px;
+							}
+							.info-text-box{
+								text-align: left;
+							}				    		
+
+				    }
+				    .info-post-box{
+				    	padding: 10px;
+				    		.image-squar{
+				    			border-radius: 20px;
+				    		}
+							input#information_image {
+								width: 300px;
+								margin: 10px auto 0;
+							}
+							.form-group {
+								width: 500px;
+								margin: 0 auto;
+									textarea.form-control {
+										height: 300px;
+									}
+							}
+							.post-form {
+								margin: 10px auto;
+							}
+							.button {
+								text-align: center;
+							}
+							.info-show-box {
+								text-align: center;
+								p {
+									margin: 20px auto 0;
+								}
+								h3 {
+									margin-top: 0;
+								}
+							}							
+				    }
 		}
-}
-.info-show-box {
-	text-align: center;
-	p {
-		margin: 20px auto 0;
-	}
-	h3 {
-		margin-top: 0;
-	}
 }
 /* ---------------------------------　*/
 /* ------------- staff ------------　*/

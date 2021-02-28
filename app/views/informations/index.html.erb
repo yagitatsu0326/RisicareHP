@@ -1,32 +1,31 @@
-<div class ="container">
-	<div class ="title-box row">
-		<h2 class ="col-xs-8 col-xs-offset-2">INFORMATION</h2>
-	</div>
-	<div class ="body-box">
-		<div class ="info-index-box row">
-			<% @informations.each do |information| %>
-				<div class ="col-xs-12 col-md-4">
-					<div class ="row">
-						<div class ="col-xs-12">
-							<%= information.created_at.strftime('%Y/%m/%d ') %>
-						</div>
-					</div>
-					<div class ="row">
-						<div class ="col-xs-12">
-							<%= information.title %>
-						</div>
-					</div>
-					<div class ="row">
-						<div class ="col-xs-12">
-							<%= link_to information_path(information.id) do %>
-								<%= attachment_image_tag information, :image, :fill, 300,300, class: "info-image" %>
-							<% end %>
-						</div>
-					</div>
+<div class="info-content col-md-9 col-lg-10 col-sm-12">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class ="title-box">
+				<span>Risicare</span>
+				<h2>INFORMATION</h2>
+			</div>
+			<div class ="body-box">
+				<div class ="info-index-box">
+					<% @informations.each do |information| %>
+					 	<%= link_to information_path(information.id) do %>
+					 		<div class="info-container row">
+							 	<div class="col-lg-4">
+							 		<%= attachment_image_tag information, :image, :fill, 150,150, class: "info-image"%>
+							 	</div>
+							 	<div class="info-text col-lg-8">
+							 		<h3><%= information.title %></h3>
+							 		<p><%= information.body %></p>
+							 		<p><%= information.created_at.strftime('%Y/%m/%d ') %></p>
+							 	</div>
+							 </div>
+					 	<% end %>
+					<% end %>
 				</div>
-			<% end %>
-			<div class ="paginate-container col-lg-12">
-				<%= paginate @informations %>
+				<div class ="paginate-container col-lg-12">
+					<%= paginate @informations %>
+				</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get 'homes/top' => 'homes#top', as: 'top'
   get 'homes/school' => 'homes#school', as: 'school'
   get 'homes/staff' => 'homes#staff', as: 'staff'
+  get 'homes/about' => 'homes#about', as: 'about'
 
 end

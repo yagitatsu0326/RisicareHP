@@ -11,51 +11,37 @@
   </head>
 
   <body data-turbolinks="false">
-      <header>
         <div class ="container">
-            <% if admin_signed_in? %>
-                <div class ="header-logo">
-                    <%= link_to "RISICARE", root_path, class: "header-logo" %>
-                </div>
-                <div class ="header-list">
-                    <div class ="row">
-                        <div class ="col-xs-4">
-                            <li><%= link_to "INFORMATION", admin_informations_path, class: "header-list" %></li>
+            <div class="row">
+                <div class="col-md-3 col-lg-2">
+                    <div class="main-sidebar">
+                        <div class="main-navbar">
+                            <div class="list-logo">
+                                <%= image_tag "list-logo.png"%><%= link_to "Risicare basketball", root_path, class: "header-text" %>
+                            </div>
                         </div>
-                        <div class ="col-xs-4">
-                            <li><%= link_to "EVENT", admin_events_path, class: "header-list" %></li>
-                        </div>
-                        <div class ="col-xs-4">
-                            <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "header-list" %></li>
-                        </div>
+                        <nav>           
+                            <% if admin_signed_in? %>
+                                <ul class="nav-list">
+                                    <li><%= link_to "INFORMATION", admin_informations_path, class: "list" %></li>
+                                    <li><%= link_to "EVENT", admin_events_path, class: "list" %></li>
+                                    <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "list" %></li>
+                                </ul>
+                            <% else %>
+                                <ul class="nav-list">
+                                    <li><%= link_to "ABOUT", about_path, class: "list"%></li>
+                                    <li><%= link_to "ADMIN", new_admin_session_path, class: "list"%></li>
+                                    <li><%= link_to "INFORMATION", informations_path, class: "list" %></li>
+                                    <li><%= link_to "EVENT", events_path, class: "list" %></li>
+                                    <li><%= link_to "SCHOOL", school_path, class: "list" %></li>
+                                    <li><%= link_to "STAFF", staff_path, class: "list" %></li>
+                                </ul>
+                            <% end %>
+                        </nav>
                     </div>
                 </div>
-            <% else %>
-                <div class ="header-logo">
-                    <%= link_to "RISICARE", root_path, class: "header-logo" %>
-                    <%= link_to  new_admin_session_path do %>
-                        <i class="fas fa-fish"></i>
-                    <% end %>
-                </div>
-                <div class ="header-list">
-                    <div class ="row">
-                        <div class ="col-xs-3">
-                            <li><%= link_to "INFORMATION", informations_path, class: "header-list" %></li>
-                        </div>
-                        <div class ="col-xs-3">
-                            <li><%= link_to "EVENT", events_path, class: "header-list" %></li>
-                        </div>
-                        <div class ="col-xs-3">
-                            <li><%= link_to "SCHOOL", school_path, class: "header-list" %></li>
-                        </div>
-                        <div class ="col-xs-3">
-                            <li><%= link_to "STAFF", staff_path, class: "header-list" %></li>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
+                <%= yield %>
+            </div>
         </div>
-      </header>
-    <%= yield %>
   </body>
 </html>
