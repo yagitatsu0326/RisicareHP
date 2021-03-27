@@ -1,21 +1,37 @@
-<div class ="container">
-	<div class ="title-box row">
-		<h2 class ="col-xs-8 col-xs-offset-2">NEW SCHEDULE</h2>
+<div class ="title-content col-md-9 col-lg-10 col-sm-12">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class ="title-box">
+				<span>Risicare</span>
+				<h2>SCHEDULE</h2>				
+			</div>
+		</div>
 	</div>
 	<div class ="body-box">
 		<div class="admin-event-new-box">
 			<%= form_with model: @event ,url: admin_events_path, local: true do |f| %>
+				<%= render 'layouts/error_messages', model: f.object %>
 				<div class ="form-group row">
-					<div class ="control-label col-xs-12">タイトル</div>
+					<div class ="control-label col-xs-12">
+						<p>タイトル</p>
 						<div class ="form-box"><%= f.text_field :title %></div>
-					<div class ="control-label col-xs-12">開始時間</div>
-						<div class ="form-box"><%= f.datetime_field :start_time %></div>
-					<div class ="control-label col-xs-12">終了時間</div>
-						<div class ="form-box"><%= f.datetime_field :end_time %></div>
-					<div class ="control-label col-xs-12">場所</div>
+					</div>
+					<div class ="control-label col-xs-12">
+						<p>場所</p>
 						<div class ="form-box"><%= f.text_field :place %></div>
-					<div class ="control-label col-xs-12">詳細</div>
+					</div>
+					<div class ="control-label col-xs-12">
+						<p>開始時間</p>
+						<div class ="form-box"><%= f.datetime_field :start_time %></div>
+					</div>
+					<div class ="control-label col-xs-12">
+						<p>終了時間</p>
+						<div class ="form-box"><%= f.datetime_field :end_time %></div>
+					</div>
+					<div class ="control-label col-xs-12">
+						<p>詳細</p>
 						<div class ="form-box"><%= f.text_area :body %></div>
+					</div>
 				</div>
 				<%= f.submit "追加", class: "btn submit-btn"%>
 			<% end %>

@@ -1,5 +1,16 @@
 ja:
-  time:
-    formats:
-      default: "%Y/%m/%d %H:%M:%S"
-      short: "%m/%d %H:%M"
+    date:
+      abbr_day_names:
+      - 日
+      - 月
+      - 火
+      - 水
+      - 木
+      - 金
+      - 土
+    time:
+      formats:
+        default: "%Y/%m/%d %H:%M:%S"
+        semi_long: "%Y/%m/%d"
+        date: "%m/%d(%a)"
+        time: "%H:%M"

@@ -24,7 +24,7 @@
                             <% if admin_signed_in? %>
                                 <ul class="nav-list">
                                     <li><%= link_to "INFORMATION", admin_informations_path, class: "list" %></li>
-                                    <li><%= link_to "EVENT", admin_events_path, class: "list" %></li>
+                                    <li><%= link_to "SCHEDULE", admin_events_path, class: "list" %></li>
                                     <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "list" %></li>
                                 </ul>
                             <% else %>
@@ -32,7 +32,7 @@
                                     <li><%= link_to "ABOUT", about_path, class: "list"%></li>
                                     <li><%= link_to "ADMIN", new_admin_session_path, class: "list"%></li>
                                     <li><%= link_to "INFORMATION", informations_path, class: "list" %></li>
-                                    <li><%= link_to "EVENT", events_path, class: "list" %></li>
+                                    <li><%= link_to "SCHEDULE", events_path, class: "list" %></li>
                                     <li><%= link_to "SCHOOL", school_path, class: "list" %></li>
                                     <li><%= link_to "STAFF", staff_path, class: "list" %></li>
                                 </ul>
