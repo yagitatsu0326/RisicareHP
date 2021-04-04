@@ -23,18 +23,18 @@
                         <nav>           
                             <% if admin_signed_in? %>
                                 <ul class="nav-list">
-                                    <li><%= link_to "INFORMATION", admin_informations_path, class: "list" %></li>
-                                    <li><%= link_to "SCHEDULE", admin_events_path, class: "list" %></li>
+                                    <li><i class="fas fa-bell"></i><%= link_to "INFORMATION", admin_informations_path, class: "list" %></li>
+                                    <li><i class="fas fa-calendar-alt"></i><%= link_to "SCHEDULE", admin_events_path, class: "list" %></li>
                                     <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "list" %></li>
                                 </ul>
                             <% else %>
                                 <ul class="nav-list">
-                                    <li><%= link_to "ABOUT", about_path, class: "list"%></li>
-                                    <li><%= link_to "ADMIN", new_admin_session_path, class: "list"%></li>
-                                    <li><%= link_to "INFORMATION", informations_path, class: "list" %></li>
-                                    <li><%= link_to "SCHEDULE", events_path, class: "list" %></li>
-                                    <li><%= link_to "SCHOOL", school_path, class: "list" %></li>
-                                    <li><%= link_to "STAFF", staff_path, class: "list" %></li>
+                                    <li><i class="fas fa-handshake"></i><%= link_to "ABOUT", about_path, class: "list"%></li>
+                                    <li><i class="fas fa-bell"></i><%= link_to "INFORMATION", informations_path, class: "list" %></li>
+                                    <li><i class="fas fa-calendar-alt"></i><%= link_to "SCHEDULE", events_path, class: "list" %></li>
+                                    <li><i class="fas fa-basketball-ball"></i><%= link_to "SCHOOL", school_path, class: "list" %></li>
+                                    <li><i class="fas fa-user-friends"></i><%= link_to "STAFF", staff_path, class: "list" %></li>
+                                    <li><i class="fas fa-user-lock"></i><%= link_to "ADMIN", new_admin_session_path, class: "list"%></li>
                                 </ul>
                             <% end %>
                         </nav>

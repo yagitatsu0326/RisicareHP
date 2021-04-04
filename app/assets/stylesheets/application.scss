@@ -30,6 +30,9 @@
 body {
 	background-color: #f5f6f8;
 	color: black;
+		a {
+			color: black;
+		}
 }
 .container{
 	margin-right: auto;
@@ -37,38 +40,72 @@ body {
 	padding-right: 20px;
 	padding-left: 20px;
 	width: 100%;
+	padding: 0;
 }
 .title-box {
 	text-align: center;
 }
 /* ----------  サイドバー ----------　*/
-.main-sidebar{
-		.main-navbar {
-		     padding: 20px 5px;
-				img {
-					max-width: 25px;
-					line-height: 60px;
-				}
-				.header-text {
-					font-size: 20px;
-					vertical-align: middle;
-				}
-		 }
-		ul{
-			list-style: none;
-				li{
-					padding: 10px;
-					border-bottom: 1px solid #e1e5eb;
-					padding: .9375rem 1.5625rem;
-				}
-		}
-}
- 
+		.main-sidebar{
+				position: fixed;
+				height: 100%;
+				background-color: white;
+					.main-navbar {
+					     padding: 20px 5px;
+							img {
+								max-width: 25px;
+								line-height: 60px;
+							}
+							.header-text {
+								font-size: 20px;
+								vertical-align: middle;
+							}
+					 }
+					ul{
+						list-style: none;
+							li{
+								padding: 10px;
+								padding: .9375rem 1.5625rem;
+									a {
+										padding-left: 10px;
+										color: #3d5170;
+										font-weight: 400;
+										
+									}
+									i {
+										color: #cacedb;
+									}
+							}
+							li:hover {
+								background-color: #E5FF64;
+									a,i{
+										color: black;
+									}
+
+							}
+					}
+			}
+
 
 /* -------------------------------　*/
 /* ------------- top -------------　*/
 .main-content {
 	background: #f5f6f8;
+		.title-box{
+			text-align: left;
+				span{
+					letter-spacing: .125rem;
+				    color: #818ea3;
+				    font-size: .625rem;
+				}
+				h2{
+					font-size: 1.625rem;
+					font-weight: 500;
+					line-height: 1;
+					margin: 0;
+					padding: 0;				
+				}
+		}
 		.top-about-box {
 			background-image: url("logo2.jpg");
 			background-size: cover;
@@ -159,8 +196,18 @@ body {
 			text-align: center;
 		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 		    background-color: white;
+		    	a:hover {
+		    		text-decoration: none;
+		    	}
+				.title{
+				    font-size: .625rem;
+				    text-align: left;
+				     h3{
+				     	padding: 10px;
+				     }
+				}			
 			    .info-container {
-			    	padding: 10px;
+			    	padding: 10px 0;
 						.info-image{
 							border-radius: 20px;
 						}
@@ -168,18 +215,86 @@ body {
 							text-align: left;
 						}
 			    }
+			    .info-container:hover{
+						h3{
+							display: inline-block;
+							color: black;
+							border-bottom: solid 2px #E5FF64;
+						}
+						p { 
+							color: black;
+						}			    	
+			    }
 		}
 		.sponsor-box{
 			background-color: white;
 			border-radius: 20px;
-			height: 300px;
+			height: auto;
 			margin-top: 20px;
+		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+			.title{	
+			    font-size: .625rem;
+			     h3{
+			     	padding: 10px;
+			     }
+			}			
+			.sponsor-image{
+					.freestyle-box{
+						background-image: url("freestyle.jpg");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						height: 150px;
+						margin:  0 auto;
+					}
+					.isoi-box{
+						background-image: url("isoi.jpg");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						height: 150px;
+						margin:  0 auto;
+						width: 70%;
+					}
+					.kyonoodashi-box{
+						background-image: url("kyonoodashi.jpg");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						height: 150px;
+						width: 40%;	
+						margin:  0 auto;
+					}
+					.kitamurastone-box{
+						background-image: url("stone.jpg");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						height: 150px;
+						width: 40%;	
+						margin:  0 auto;
+					}
+			}
 		}
 		.event-box{
 			background-color: white;
 			border-radius: 20px;
 			height: 300px;
 			margin-top: 20px;
+		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+				.title{
+						letter-spacing: .125rem;	
+					    font-size: .625rem;
+					     h3{
+					     	padding: 10px;
+					     }
+				}
+				tr:hover{
+					background-color: #E5FF64;
+						p {
+							color: black;
+						}
+				}			
 		}
 }
 
@@ -288,7 +403,18 @@ td.fc-day.fc-widget-content.fc-sat.fc-today {
 										text-align: left;			    			
 						    		}
 				    		}
+						    .info-container:hover{
+									h3{
+										display: inline-block;
+										color: black;
+										border-bottom: solid 5px #E5FF64;
+									}
+									p { 
+										color: black;
+									}			    	
+						    }
 				    }
+
 				    .info-show-box {
 				    	padding: 10px 10px 100px 10px;
 				    	margin-bottom: 50px;

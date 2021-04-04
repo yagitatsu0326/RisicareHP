@@ -1,12 +1,14 @@
 <div class="main-content col-md-9 col-lg-10 col-sm-12">
 	<div class="row">
 		<div class="col-lg-8 col-md-12 col-sm-12">
-			<div class="top-about-box">
-				<div class="about-text">
-					<h2><ABBR>ABOUT US</ABBR></h2>
-					<p>abcdefghijklmnopqrstu</p>
+			<%= link_to about_path do %>
+				<div class="top-about-box">
+					<div class="about-text">
+						<h2><ABBR>ABOUT US</ABBR></h2>
+						<p>abcdefghijklmnopqrstu</p>
+					</div>
 				</div>
-			</div>
+			<% end %>
 		</div>
 		<div class="col-lg-4 col-md-12 col-sm-12">
 			<%= link_to staff_path do %>
@@ -28,6 +30,9 @@
 		</div>
 		<div class="col-lg-8 col-md-12">
 			 <div class="info-box">
+			 	<div class="title">
+			 		<h3>Information</h3>
+			 	</div>
 			 	<% @informations.each do |information| %>
 				 	<%= link_to information_path(information.id) do %>
 				 		<div class="info-container row">
@@ -47,6 +52,9 @@
 
 		<div class="col-lg-4 col-md-12 col-sm-12">
 			<div class="event-box">
+				<div class="title">
+					<h3>Schedule</h3>
+				</div>
 				<table class="index-table table">
 					<% @events.each do |event| %>
 							<tr>
@@ -61,8 +69,50 @@
 			 		<% end %>
 				</table>
 			</div>
-
-			<div class="sponsor-box">スポンサー</div>
+			<div class="sponsor-box">
+				<div class="title">
+					<h3>Sponsor</h3>
+				</div>
+				<div class="sponsor-image">
+					<a href="https://www.u-fsj.jp">
+						<div class="freestyle-box"></div>
+					</a>
+					<a href="http://www.kyoto-isoi.com/">
+						<div class="isoi-box"></div>
+					</a>
+					<a href="https://www.morinogi.co.jp/kyono-odashi/">
+						<div class="kyonoodashi-box"></div>
+					</a>
+					<div class="kitamurastone-box"></div>
+				</div>
+			</div>
 		</div>
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
