@@ -1,4 +1,4 @@
-<div class="main-content col-md-9 col-lg-10 col-sm-12">
+<div class="main-content col-md-9 col-lg-10 col-sm-12 p-0 offset-lg-2 offset-md-3">
 	<div class="row">
 		<div class="col-lg-8 col-md-12 col-sm-12">
 			<%= link_to about_path do %>
@@ -10,7 +10,7 @@
 				</div>
 			<% end %>
 		</div>
-		<div class="col-lg-4 col-md-12 col-sm-12">
+		<div class="col-lg-4 col-md-12 col-sm-12 clearfix">
 			<%= link_to staff_path do %>
 				<div class="staff-box">
 					<div class="goki-box">
@@ -28,25 +28,32 @@
 				</div>
 			<% end %>
 		</div>
-		<div class="col-lg-8 col-md-12">
+		<div class="col-lg-8 col-md-12 col-sm-12">
 			 <div class="info-box">
 			 	<div class="title">
 			 		<h3>Information</h3>
 			 	</div>
-			 	<% @informations.each do |information| %>
-				 	<%= link_to information_path(information.id) do %>
-				 		<div class="info-container row">
-						 	<div class="col-lg-4">
-						 		<%= attachment_image_tag information, :image, :fill, 150,150, class: "info-image"%>
-						 	</div>
-						 	<div class="info-text col-lg-8">
-						 		<h3><%= information.title %></h3>
-						 		<p><%= information.body %></p>
-						 		<p><%= l information.created_at, format: :semi_long %></p>
-						 	</div>
-						 </div>
-				 	<% end %>
-			 	<% end %>
+			 	<table class="index-table table">
+				 	<% @informations.each do |information| %>
+				 		<tr>
+				 			<td>
+				 				<%= link_to information_path(information.id) do %>
+							 		<div class="info-container row">
+									 	<div class="col-lg-4">
+									 		<%= attachment_image_tag information, :image, :fill, 150,150, class: "info-image"%>
+									 	</div>
+									 	<div class="info-text col-lg-8">
+									 		<h3><%= information.title %></h3>
+									 		<p><%= information.body.truncate(70) %></p>
+									 		<p><%= l information.created_at, format: :semi_long %></p>
+									 	</div>
+									 </div>
+								 <% end %>
+							 </td>
+						</tr>		  	
+				 	<% end %>			 		
+			 	</table>
+
 			 </div>
 		</div>
 
@@ -70,49 +77,29 @@
 				</table>
 			</div>
 			<div class="sponsor-box">
-				<div class="title">
-					<h3>Sponsor</h3>
-				</div>
-				<div class="sponsor-image">
+				<div class="sponsor-gold">
+					<h4><i class="fas fa-circle"></i>Gold Sponsor<i class="fas fa-circle"></i></h4>
 					<a href="https://www.u-fsj.jp">
 						<div class="freestyle-box"></div>
 					</a>
 					<a href="http://www.kyoto-isoi.com/">
 						<div class="isoi-box"></div>
 					</a>
+				</div>
+				<div class="sponsor-silver">
+					<h4><i class="fas fa-circle"></i>Silver Sponsor<i class="fas fa-circle"></i></h4>
+					<div class="kitamurastone-box"></div>
+				</div>
+				<div class="sponsor-bronze">
+					<h4><i class="fas fa-circle"></i>Bronze Sponsor<i class="fas fa-circle"></i></h4>
 					<a href="https://www.morinogi.co.jp/kyono-odashi/">
 						<div class="kyonoodashi-box"></div>
 					</a>
-					<div class="kitamurastone-box"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<footer>
+		
+	</footer>
 </div>

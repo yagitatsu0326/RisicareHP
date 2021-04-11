@@ -12,36 +12,37 @@
 
   <body data-turbolinks="false">
         <div class ="container">
-            <div class="row">
-                <div class="col-md-3 col-lg-2">
-                    <div class="main-sidebar">
-                        <div class="main-navbar">
-                            <div class="list-logo">
-                                <%= image_tag "list-logo.png"%><%= link_to "Risicare basketball", root_path, class: "header-text" %>
+           
+                    <div class="row">
+                        <div class="main-sidebar col-md-3 col-lg-2 px-0">
+                            <div class="main-navbar">
+                                <div class="list-logo">
+                                    <%= image_tag "list-logo.png"%><%= link_to "Risicare basketball", root_path, class: "header-text" %>
+                                </div>
                             </div>
+                            <nav>           
+                                <% if admin_signed_in? %>
+                                    <ul class="nav-list">
+                                        <li><i class="fas fa-bell"></i><%= link_to "INFORMATION", admin_informations_path, class: "list" %></li>
+                                        <li><i class="fas fa-calendar-alt"></i><%= link_to "SCHEDULE", admin_events_path, class: "list" %></li>
+                                        <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "list" %></li>
+                                    </ul>
+                                <% else %>
+                                    <ul class="nav-list">
+                                        <li><i class="fas fa-handshake"></i><%= link_to "ABOUT", about_path, class: "list"%></li>
+                                        <li><i class="fas fa-bell"></i><%= link_to "INFORMATION", informations_path, class: "list" %></li>
+                                        <li><i class="fas fa-calendar-alt"></i><%= link_to "SCHEDULE", events_path, class: "list" %></li>
+                                        <li><i class="fas fa-basketball-ball"></i><%= link_to "SCHOOL", school_path, class: "list" %></li>
+                                        <li><i class="fas fa-user-friends"></i><%= link_to "STAFF", staff_path, class: "list" %></li>
+                                        <li><i class="fas fa-user-lock"></i><%= link_to "ADMIN", new_admin_session_path, class: "list"%></li>
+                                    </ul>
+                                <% end %>
+                            </nav>
                         </div>
-                        <nav>           
-                            <% if admin_signed_in? %>
-                                <ul class="nav-list">
-                                    <li><i class="fas fa-bell"></i><%= link_to "INFORMATION", admin_informations_path, class: "list" %></li>
-                                    <li><i class="fas fa-calendar-alt"></i><%= link_to "SCHEDULE", admin_events_path, class: "list" %></li>
-                                    <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "list" %></li>
-                                </ul>
-                            <% else %>
-                                <ul class="nav-list">
-                                    <li><i class="fas fa-handshake"></i><%= link_to "ABOUT", about_path, class: "list"%></li>
-                                    <li><i class="fas fa-bell"></i><%= link_to "INFORMATION", informations_path, class: "list" %></li>
-                                    <li><i class="fas fa-calendar-alt"></i><%= link_to "SCHEDULE", events_path, class: "list" %></li>
-                                    <li><i class="fas fa-basketball-ball"></i><%= link_to "SCHOOL", school_path, class: "list" %></li>
-                                    <li><i class="fas fa-user-friends"></i><%= link_to "STAFF", staff_path, class: "list" %></li>
-                                    <li><i class="fas fa-user-lock"></i><%= link_to "ADMIN", new_admin_session_path, class: "list"%></li>
-                                </ul>
-                            <% end %>
-                        </nav>
+                        <%= yield %>
                     </div>
-                </div>
-                <%= yield %>
-            </div>
+                    
+              
         </div>
   </body>
 </html>

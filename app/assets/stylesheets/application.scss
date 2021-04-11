@@ -27,12 +27,22 @@
   	display: block;
   	clor: both;
 }
+html {
+	height: 100%;
+}
 body {
 	background-color: #f5f6f8;
 	color: black;
+	height: 100%;
 		a {
 			color: black;
 		}
+}
+footer {
+	height: 100px;
+	background-color: white;
+	border-top: 1px solid #e1e5eb!important;
+	margin-top: 30px;
 }
 .container{
 	margin-right: auto;
@@ -41,50 +51,58 @@ body {
 	padding-left: 20px;
 	width: 100%;
 	padding: 0;
+	height: 100%;
+}
+.row {
+	height: 100%;
 }
 .title-box {
 	text-align: center;
 }
 /* ----------  サイドバー ----------　*/
-		.main-sidebar{
-				position: fixed;
-				height: 100%;
-				background-color: white;
-					.main-navbar {
-					     padding: 20px 5px;
-							img {
-								max-width: 25px;
-								line-height: 60px;
+.main-sidebar{
+		height: 100%;
+		background-color: white;
+		//position: fixed;
+		top: 0;
+		z-index: 100px;
+		padding: 0;		
+			.main-navbar {
+			     padding: 20px 5px;
+			     text-align: center;
+					img {
+						max-width: 25px;
+						line-height: 60px;
+					}
+					.header-text {
+						font-size: 20px;
+						vertical-align: middle;
+					}
+			 }
+			ul{
+				list-style: none;
+					li{
+						padding: 10px;
+						padding: .9375rem 1.5625rem;
+							a {
+								padding-left: 10px;
+								color: #3d5170;
+								font-weight: 400;
+								
 							}
-							.header-text {
-								font-size: 20px;
-								vertical-align: middle;
-							}
-					 }
-					ul{
-						list-style: none;
-							li{
-								padding: 10px;
-								padding: .9375rem 1.5625rem;
-									a {
-										padding-left: 10px;
-										color: #3d5170;
-										font-weight: 400;
-										
-									}
-									i {
-										color: #cacedb;
-									}
-							}
-							li:hover {
-								background-color: #E5FF64;
-									a,i{
-										color: black;
-									}
-
+							i {
+								color: #cacedb;
 							}
 					}
+					li:hover {
+						background-color: #E5FF64;
+							a,i{
+								color: black;
+							}
+
+					}
 			}
+	}
 
 
 /* -------------------------------　*/
@@ -196,6 +214,7 @@ body {
 			text-align: center;
 		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 		    background-color: white;
+		    padding: 10px 0;
 		    	a:hover {
 		    		text-decoration: none;
 		    	}
@@ -203,7 +222,7 @@ body {
 				    font-size: .625rem;
 				    text-align: left;
 				     h3{
-				     	padding: 10px;
+				     	padding: 0 10px;
 				     }
 				}			
 			    .info-container {
@@ -215,16 +234,12 @@ body {
 							text-align: left;
 						}
 			    }
-			    .info-container:hover{
-						h3{
-							display: inline-block;
+				tr:hover{
+					background-color: #E5FF64;
+						h3,p {
 							color: black;
-							border-bottom: solid 2px #E5FF64;
 						}
-						p { 
-							color: black;
-						}			    	
-			    }
+				}		
 		}
 		.sponsor-box{
 			background-color: white;
@@ -232,13 +247,18 @@ body {
 			height: auto;
 			margin-top: 20px;
 		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-			.title{	
-			    font-size: .625rem;
-			     h3{
-			     	padding: 10px;
-			     }
-			}			
-			.sponsor-image{
+		    padding: 30px 0;  
+			h4{
+				text-align: center;
+				margin-top: 30px;
+			}		
+			.sponsor-gold{
+				h4{
+					margin-top: 0;
+				}
+				i {
+					color: #DBB400;
+				}
 					.freestyle-box{
 						background-image: url("freestyle.jpg");
 						background-size: contain;
@@ -256,37 +276,46 @@ body {
 						margin:  0 auto;
 						width: 70%;
 					}
-					.kyonoodashi-box{
-						background-image: url("kyonoodashi.jpg");
-						background-size: contain;
-						background-position: center;
-						background-repeat: no-repeat;
-						height: 150px;
-						width: 40%;	
-						margin:  0 auto;
-					}
+			}
+			.sponsor-silver{
+				i {
+					color: #C9CACA; 
+				}
 					.kitamurastone-box{
 						background-image: url("stone.jpg");
 						background-size: contain;
 						background-position: center;
 						background-repeat: no-repeat;
 						height: 150px;
-						width: 40%;	
+						width: 50%;	
 						margin:  0 auto;
-					}
+					}	
+			}
+			.sponsor-bronze{
+				i {
+					color: #C9AE5D;
+				}
+					.kyonoodashi-box{
+						background-image: url("kyonoodashi.jpg");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						height: 150px;
+						margin:  0 auto;
+					}			
 			}
 		}
 		.event-box{
 			background-color: white;
 			border-radius: 20px;
-			height: 300px;
 			margin-top: 20px;
 		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		    padding: 10px 0;
 				.title{
 						letter-spacing: .125rem;	
 					    font-size: .625rem;
 					     h3{
-					     	padding: 10px;
+					     	padding: 0 10px;
 					     }
 				}
 				tr:hover{
@@ -302,16 +331,18 @@ body {
 /* -------------------------------　*/
 /* ------------ login ------------　*/
 .body-box {
-	.login-body-container {
-		padding: 10px;
-		text-align: center;
-			.control-label {
-				margin-top: 15px;
-			}
-			.form-box {
-				color: black;
-			}
-	}
+	width: 90%;
+	margin: 50px;
+		.login-body-container {
+			padding: 10px;
+			text-align: center;
+				.control-label {
+					margin-top: 15px;
+				}
+				.form-box {
+					color: black;
+				}
+		}
 }
 
 /* -------------------------------　*/
@@ -523,12 +554,13 @@ td.fc-day.fc-widget-content.fc-sat.fc-today {
 /* ------------- about ------------　*/
 .about-body-box{
 		border-radius: 20px;
-		margin-top: 20px;
+		margin: 50px;
 		text-align: center;
 	    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	    background: white;
 	    height: auto;
 	    padding: inherit;
+	    width: 90%;
 			.about-image-box {
 				background-image: url("logo2.jpg");
 				background-size: cover;
