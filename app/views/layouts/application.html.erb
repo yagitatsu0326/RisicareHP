@@ -11,38 +11,53 @@
   </head>
 
   <body data-turbolinks="false">
-        <div class ="container">
-           
-                    <div class="row">
-                        <div class="main-sidebar col-md-3 col-lg-2 px-0">
-                            <div class="main-navbar">
-                                <div class="list-logo">
-                                    <%= image_tag "list-logo.png"%><%= link_to "Risicare basketball", root_path, class: "header-text" %>
-                                </div>
-                            </div>
-                            <nav>           
-                                <% if admin_signed_in? %>
-                                    <ul class="nav-list">
-                                        <li><i class="fas fa-bell"></i><%= link_to "INFORMATION", admin_informations_path, class: "list" %></li>
-                                        <li><i class="fas fa-calendar-alt"></i><%= link_to "SCHEDULE", admin_events_path, class: "list" %></li>
-                                        <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "list" %></li>
-                                    </ul>
-                                <% else %>
-                                    <ul class="nav-list">
-                                        <li><i class="fas fa-handshake"></i><%= link_to "ABOUT", about_path, class: "list"%></li>
-                                        <li><i class="fas fa-bell"></i><%= link_to "INFORMATION", informations_path, class: "list" %></li>
-                                        <li><i class="fas fa-calendar-alt"></i><%= link_to "SCHEDULE", events_path, class: "list" %></li>
-                                        <li><i class="fas fa-basketball-ball"></i><%= link_to "SCHOOL", school_path, class: "list" %></li>
-                                        <li><i class="fas fa-user-friends"></i><%= link_to "STAFF", staff_path, class: "list" %></li>
-                                        <li><i class="fas fa-user-lock"></i><%= link_to "ADMIN", new_admin_session_path, class: "list"%></li>
-                                    </ul>
-                                <% end %>
-                            </nav>
+        <div class ="container">      
+            <div class="row">
+                <div class="main-sidebar col-md-3 col-lg-2 px-0">
+                    <div class="main-navbar">
+                        <div class="list-logo">
+                            <%= image_tag "list-logo.png"%><%= link_to "Risicare basketball", root_path, class: "header-text" %>
                         </div>
-                        <%= yield %>
                     </div>
-                    
-              
+                    <nav>           
+                        <% if admin_signed_in? %>
+                            <ul class="nav-list">
+                                <%= link_to admin_informations_path do %>
+                                     <li><i class="fas fa-bell"><span>INFORMATION</span></i></li>
+                                <% end %>
+                                <%= link_to admin_events_path do %>
+                                     <li><i class="fas fa-calendar-alt"><span>SCHEDULE</span></i></li>
+                                <% end %>
+                                <%= link_to destroy_admin_session_path, method: :delete, data:{confirm:" ログアウトしますか？"} do %>
+                                    <li><i class="fas fa-sign-out-alt"><span>LOGOUT</span></i></li>
+                                <% end %>
+                            </ul>
+                        <% else %>
+                            <ul class="nav-list">
+                                <%= link_to about_path do %>
+                                    <li><i class="fas fa-handshake"><span>ABOU</span></i>T</li>
+                                <% end %>
+                                <%= link_to informations_path do %>
+                                     <li><i class="fas fa-bell"><span>INFORMATIO</span></i>N</li>
+                                <% end %>
+                                <%= link_to events_path do %>
+                                    <li><i class="fas fa-calendar-alt"><span>SCHEDULE</span></i></li>
+                                <% end %>
+                                <%= link_to school_path do %>
+                                    <li><i class="fas fa-basketball-ball"><span>SCHOOL</span></i></li>
+                                <% end %>
+                                <%= link_to staff_path do %>
+                                    <li><i class="fas fa-user-friends"><span>STAFF</span></i></li>
+                                <% end %>
+                                <%= link_to new_admin_session_path do %>
+                                     <li><i class="fas fa-user-lock"><span>ADMIN</span></i></li>
+                                <% end %>
+                            </ul>
+                        <% end %>
+                    </nav>
+                </div>
+                <%= yield %>
+            </div>             
         </div>
   </body>
 </html>

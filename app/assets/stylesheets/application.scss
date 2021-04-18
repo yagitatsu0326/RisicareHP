@@ -52,6 +52,9 @@ footer {
 	width: 100%;
 	padding: 0;
 	height: 100%;
+		a {
+			text-decoration: none;
+		}
 }
 .row {
 	height: 100%;
@@ -78,28 +81,27 @@ footer {
 						font-size: 20px;
 						vertical-align: middle;
 					}
+					.header-text:hover{
+						color: black;
+					}
 			 }
 			ul{
 				list-style: none;
 					li{
 						padding: 10px;
 						padding: .9375rem 1.5625rem;
-							a {
-								padding-left: 10px;
-								color: #3d5170;
-								font-weight: 400;
-								
-							}
 							i {
-								color: #cacedb;
-							}
-					}
-					li:hover {
-						background-color: #E5FF64;
-							a,i{
+								padding-left: 20px;
 								color: black;
 							}
-
+							span {
+								padding-left: 10px;		
+							}				}
+					li:hover {
+						background-color: #E5FF64;
+						 i{
+						 	color: black;
+						 }
 					}
 			}
 	}
@@ -423,8 +425,8 @@ td.fc-day.fc-widget-content.fc-sat.fc-today {
 			    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 			    background: white;
 			    height: auto;
+			    padding: 20px 0;
 				    .info-index-box {
-				    	padding: 10px;
 				    		.info-container{
 				    			padding: 10px;
 									.info-image{
@@ -434,26 +436,23 @@ td.fc-day.fc-widget-content.fc-sat.fc-today {
 										text-align: left;			    			
 						    		}
 				    		}
-						    .info-container:hover{
-									h3{
-										display: inline-block;
-										color: black;
-										border-bottom: solid 5px #E5FF64;
+							tr:hover{
+								background-color: #E5FF64;
+									h3,p {
+										color: black;	
 									}
-									p { 
-										color: black;
-									}			    	
-						    }
-				    }
-
+							}
+					}
 				    .info-show-box {
 				    	padding: 10px 10px 100px 10px;
 				    	margin-bottom: 50px;
 							.info-image{
 								border-radius: 20px;
+								margin-top: 10px;
 							}
 							.info-text-box{
 								text-align: left;
+								margin-top: 20px;
 							}				    		
 
 				    }
@@ -494,50 +493,34 @@ td.fc-day.fc-widget-content.fc-sat.fc-today {
 /* ---------------------------------　*/
 /* ------------- staff -------------　*/
 .staff-index{
-	    	.staff-box{
-	    		border-radius: 20px;
-	    		background-color: white;
-	    			.goki-image-main{
-	    				background-image: url("goki.jpg");
-					    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-					    background-position: center;
-					    background-size: cover;
-					    border-radius: 50%;
-					    height: 100px;
-					    width: 100px;
-					    position: absolute;
-					    top: 27%;
-					    left: 10%;
-	    			}
-	    			.goki-image-sub{
-					    background-image: url(image2.jpg);
-					    height: 250px;
-					    background-size: cover;
-					    background-position: center;
-					    border-radius: 20px 20px 0 0;
-					    margin-bottom: 50px;
-	    			}
-	    			.yagi-image-main{
-	    				background-image: url("yagi.jpg");
-	    				box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-					    background-position: center;
-					    background-size: cover;
-					    border-radius: 50%;
-					    height: 100px;
-					    width: 100px;
-					    position: absolute;
-					    top: 50%;
-					    left: 10%;
-	    			}
-	    			.yagi-image-sub{
-	    				background-image: url("yagisub.jpeg");
-					    height: 250px;
-					    background-size: cover;
-					    background-position: center;
-					    border-radius: 20px 20px 0 0;
-					    margin-bottom: 50px;
-	    			}
-	    	}
+	.goki-box,.yagi-box,.ryuu-box{
+		background-color: white;
+		height: auto;
+		border-radius: 20px;
+	    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	    padding: 30px 30px;  
+	    margin: 10px;
+	}
+	.goki-image{
+		background-image: url("goki.jpg");
+	}
+	.yagi-image{
+		background-image: url("yagi.jpg");
+	}
+	.ryuu-image{
+		background-image: url("logo.jpg");
+	}
+	.goki-image,.yagi-image,.ryuu-image{
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin: 0 auto;
+		height: 150px;
+		width: 150px;
+	}
+	.name-box,.sns-box{
+		text-align: center;
+	}
 }
 /* --------------------------------　*/
 /* ------------- error  -----------　*/

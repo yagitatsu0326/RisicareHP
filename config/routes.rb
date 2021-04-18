@@ -3,12 +3,11 @@ Rails.application.routes.draw do
 
   root "homes#top"
 
-  devise_for :admins
+  devise_for :admins 
   namespace :admin do
   	resources :events
   	resources :informations
   end
-
 
   resources :events, only: [:show, :index]
   resources :informations, only: [:show, :index]
