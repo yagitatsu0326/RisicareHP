@@ -7,7 +7,7 @@ class Admin::InformationsController < ApplicationController
 		@information = Information.new(information_params)
 		@information.admin_id = current_admin.id
 		if @information.save
-			redirect_to admin_informations_path
+			redirect_to informations_path
 		else
 			render 'new'
 		end
@@ -30,7 +30,7 @@ class Admin::InformationsController < ApplicationController
 		@information = Information.find(params[:id])
 		@information.admin_id = current_admin.id
 		if @information.update(information_params)
-			redirect_to admin_informations_path
+			redirect_to informations_path
 		else
 			render 'edit'
 		end
@@ -39,7 +39,7 @@ class Admin::InformationsController < ApplicationController
 	def destroy
 		@information = Information.find(params[:id])
 		@information.destroy
-		redirect_to admin_informations_path
+		redirect_to informations_path
 	end
 
 	private

@@ -1,24 +1,27 @@
-<div class ="title-content col-md-9 col-lg-10 col-sm-12">
-	<div class="row">
-		<div class="col-xs-12">
+<div class="row">
+	<div class ="info-content col-lg-offset-1 col-lg-10 col-xs-12">
+		<div class ="body-box">
 			<div class ="title-box">
 				<span>Risicare</span>
 				<h2>INFORMATION</h2>
+				<% if admin_signed_in? %>
+					<%= link_to edit_admin_information_path(@information.id) do %>
+						<p>EDIT</p>
+					<% end %>
+				<% end %>
 			</div>
-		</div>
-	</div>
-	<div class ="body-box">
-		<div class ="info-show-box row">
-			<div class="col-xs-12">
-				<p><%= @information.created_at.strftime('%Y/%m/%d ') %></p>
-				<h3><%= @information.title %></h3>
-				<%= attachment_image_tag @information, :image, :fill, 300,300, class: "info-image" %>
-				<div class="info-text-box row">
-					<div class="col-xs-6 col-xs-offset-3">
-						<p><%=safe_join(@information.body.split("\n"),tag(:br))%></p>
+			<div class ="info-show-box row">
+				<div class="col-xs-12">
+					<h3><%= @information.title %></h3>
+					<p><%= @information.created_at.strftime('%Y/%m/%d ') %></p>
+					<%= attachment_image_tag @information, :image, :fill, 300,300, class: "info-image" %>
+					<div class="info-text-box row">
+						<div class="col-xs-offset-2 col-xs-8">
+							<p><%=safe_join(@information.body.split("\n"),tag(:br))%></p>
+						</div>
 					</div>
-				</div>		
+				</div>
 			</div>
-		</div>
+	    </div>
 	</div>
 </div>

@@ -38,12 +38,6 @@ body {
 			color: black;
 		}
 }
-footer {
-	height: 100px;
-	background-color: white;
-	border-top: 1px solid #e1e5eb!important;
-	margin-top: 30px;
-}
 .container{
 	margin-right: auto;
 	margin-left: auto;
@@ -63,54 +57,125 @@ footer {
 	text-align: center;
 }
 /* ----------  サイドバー ----------　*/
-.main-sidebar{
-		height: 100%;
-		background-color: white;
-		//position: fixed;
-		top: 0;
-		z-index: 100px;
-		padding: 0;		
-			.main-navbar {
-			     padding: 20px 5px;
-			     text-align: center;
-					img {
-						max-width: 25px;
-						line-height: 60px;
-					}
-					.header-text {
-						font-size: 20px;
-						vertical-align: middle;
-					}
-					.header-text:hover{
-						color: black;
-					}
-			 }
-			ul{
-				list-style: none;
-					li{
-						padding: 10px;
-						padding: .9375rem 1.5625rem;
-							i {
-								padding-left: 20px;
+header{
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	background-color: #f5f6f8;
+	padding: 5px;
+			.drawer{
+				 text-align: center;
+					.main-navbar {
+					     margin-top: 10px;
+					     text-align: center;
+							img {
+								max-width: 25px;
+								line-height: 60px;
+							}
+							.header-text {
+								font-weight: 500;
+								vertical-align: middle;
+								font-size: large;
+							}
+							.header-text:hover{
 								color: black;
 							}
-							span {
-								padding-left: 10px;		
-							}				}
-					li:hover {
-						background-color: #E5FF64;
-						 i{
-						 	color: black;
-						 }
 					}
 			}
-	}
+			.Toggle{
+			    display: block;
+			    position: fixed;
+			    width: 50px;
+			    height: 50px;
+			    cursor: pointer;
+			    top: 1%;
+			    right: -1%;
+			    	span{
+					    display: block;
+					    position: absolute;
+					    width: 60%;
+					    border-bottom: solid 4px #333;
+					    -webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
+					    -moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
+					    transition: .35s ease-in-out;			/*変化の速度を指定*/
+			    	}
+			}
+	    	.Toggle span:nth-child(1){
+			    top:5px;
+	    	}
+	    	.Toggle span:nth-child(2){
+	    		top:15px;
+	    	}
+	    	.Toggle span:nth-child(3){
+	    		top:25px;
+	    	}
+			.Toggle.active span:nth-child(1) {
+				top: 18px;
+				/* 1番目のspanをマイナス45度に */
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+			/* 2番目と3番目のspanを45度に */
+			.Toggle.active span:nth-child(2),.Toggle.active span:nth-child(3) {
+				top: 18px;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+			.menu{
+				text-align: center;
+				transition: 0.5s ease;/*滑らかに表示*/
+				-webkit-transform: translateX(100%);/*画面より100%外へ押し出し非表示にさせる*/
+				transform: translateX(-100%);/*右から出す場合は、マイナス100%としてください*/
+				height: 0;
+					ul {
+						list-style: none;
+					}
+			}
+			.menu.open {
+			 -webkit-transform: translateX(0%);
+			 transform: translateX(0%);/*メニューを元の位置へ戻す*/
+			 height: 250px
 
+			}
+			@media screen and (min-width:768px) {
+				.Toggle {
+					display: none;
+				}
+				.menu{
+					width: 100%;
+					-webkit-transform: translateX(0);
+					transform: translateX(0);
+						ul{
+						    display: inline-block;
 
+						}
+						li{
+							float: left;
+							padding: 0 30px;
+							font-weight: 500;
+						}
+				}
+			}
+			@media screen and (max-width: 767px){
+				.menu{
+					li{
+						padding: 10px;
+						font-weight: 500;
+					}
+				}
+				.menu.open{
+					height: 100%;
+				}
+			}
+
+}
 /* -------------------------------　*/
 /* ------------- top -------------　*/
 .main-content {
 	background: #f5f6f8;
+	margin-top: 75px;
 		.title-box{
 			text-align: left;
 				span{
@@ -123,7 +188,7 @@ footer {
 					font-weight: 500;
 					line-height: 1;
 					margin: 0;
-					padding: 0;				
+					padding: 0;
 				}
 		}
 		.top-about-box {
@@ -144,7 +209,6 @@ footer {
 					border-radius: 0 20px 20px 0;
     				float: right;
 				}
-
 		}
 		.staff-box{
 			margin-top: 20px;
@@ -226,7 +290,7 @@ footer {
 				     h3{
 				     	padding: 0 10px;
 				     }
-				}			
+				}
 			    .info-container {
 			    	padding: 10px 0;
 						.info-image{
@@ -334,7 +398,7 @@ footer {
 /* ------------ login ------------　*/
 .body-box {
 	width: 90%;
-	margin: 50px;
+	margin: 0 auto;
 		.login-body-container {
 			padding: 10px;
 			text-align: center;
@@ -400,97 +464,7 @@ td.fc-day.fc-widget-content.fc-sat.fc-today {
 }
 /* -------------------------------　*/
 
-/* ------------- info ------------　*/
-.title-content{
-	background: #f5f6f8;
-		.title-box{
-			text-align: left;
-				span{
-					letter-spacing: .125rem;
-				    color: #818ea3;
-				    font-size: .625rem;
-				}
-				h2{
-					font-size: 1.625rem;
-					font-weight: 500;
-					line-height: 1;
-					margin: 0;
-					padding: 0;				
-				}
-		}
-		.body-box{
-				border-radius: 20px;
-				margin-top: 20px;
-				text-align: center;
-			    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-			    background: white;
-			    height: auto;
-			    padding: 20px 0;
-				    .info-index-box {
-				    		.info-container{
-				    			padding: 10px;
-									.info-image{
-										border-radius: 20px;
-									}
-									.info-text{
-										text-align: left;			    			
-						    		}
-				    		}
-							tr:hover{
-								background-color: #E5FF64;
-									h3,p {
-										color: black;	
-									}
-							}
-					}
-				    .info-show-box {
-				    	padding: 10px 10px 100px 10px;
-				    	margin-bottom: 50px;
-							.info-image{
-								border-radius: 20px;
-								margin-top: 10px;
-							}
-							.info-text-box{
-								text-align: left;
-								margin-top: 20px;
-							}				    		
 
-				    }
-				    .info-post-box{
-				    	padding: 10px;
-				    		.image-squar{
-				    			border-radius: 20px;
-				    		}
-							input#information_image {
-								width: 300px;
-								margin: 10px auto 0;
-							}
-							.form-group {
-								width: 500px;
-								margin: 0 auto;
-									textarea.form-control {
-										height: 300px;
-									}
-							}
-							.post-form {
-								margin: 10px auto;
-							}
-							.button {
-								text-align: center;
-							}
-							.info-show-box {
-								text-align: center;
-								p {
-									margin: 20px auto 0;
-								}
-								h3 {
-									margin-top: 0;
-								}
-							}							
-				    }
-		}
-}
-/* ---------------------------------　*/
 /* ------------- staff -------------　*/
 .staff-index{
 	.goki-box,.yagi-box,.ryuu-box{
@@ -535,15 +509,18 @@ td.fc-day.fc-widget-content.fc-sat.fc-today {
 
 /* --------------------------------　*/
 /* ------------- about ------------　*/
+.about-content {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
 .about-body-box{
 		border-radius: 20px;
-		margin: 50px;
 		text-align: center;
 	    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	    background: white;
 	    height: auto;
 	    padding: inherit;
-	    width: 90%;
+	    width: 100%;
 			.about-image-box {
 				background-image: url("logo2.jpg");
 				background-size: cover;
