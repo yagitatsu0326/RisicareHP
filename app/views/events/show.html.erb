@@ -1,6 +1,6 @@
-<div class ="title-content col-md-9 col-lg-10 col-sm-12">
-	<div class ="row">
-		<div class="col-xs-12">
+<div class="row">
+	<div class ="event-content col-lg-offset-1 col-lg-10 col-sm-12">
+		<div class ="body-box">
 			<div class ="title-box">
 				<span>Risicare</span>
 				<h2>SCHEDULE</h2>
@@ -8,15 +8,13 @@
 					<%= link_to edit_admin_event_path(@event.id) do %>
 						<p>EDIT</p>
 					<% end %>
-				<% end %>				
+				<% end %>
 			</div>
-		</div>
-	</div>
-	<div class ="body-box">
-		<div class ="event-show-box row">
-			<h3 class ="col-xs-12"><%= @event.title %> in <%= @event.place %></h3>
-			<h4 class ="col-xs-12"><%= l @event.start_time, format: :date %><%= l @event.start_time, format: :time %>~<%= l @event.end_time, format: :time %></h4>
-			<p class ="col-xs-12"><%=safe_join(@event.body.split("\n"),tag(:br))%></p>
+			<div class ="event-show-box row">
+				<h3 class ="col-xs-12"><%= @event.title %> in <%= @event.place %></h3>
+				<h4 class ="col-xs-12"><%= l @event.start_time, format: :date %><%= l @event.start_time, format: :time %>~<%= l @event.end_time, format: :time %></h4>
+				<p class ="col-xs-12"><%=safe_join(@event.body.split("\n"),tag(:br))%></p>
+			</div>
 		</div>
 	</div>
 </div>

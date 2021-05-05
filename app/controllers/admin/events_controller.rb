@@ -8,7 +8,7 @@ class Admin::EventsController < ApplicationController
 		@event =Event.new(event_params)
 		@event.admin_id = current_admin.id
 		if @event.save
-			redirect_to admin_events_path
+			redirect_to events_path
 		else
 			render 'new'
 		end
@@ -30,7 +30,7 @@ class Admin::EventsController < ApplicationController
 		@event = Event.find(params[:id])
 		@event.admin_id = current_admin.id
 		if @event.update(event_params)
-			redirect_to admin_events_path
+			redirect_to events_path
 		else
 			render 'edit'
 		end
@@ -39,7 +39,7 @@ class Admin::EventsController < ApplicationController
 	def destroy
 		@event = Event.find(params[:id])
 		@event.destroy
-		redirect_to admin_events_path
+		redirect_to events_path
 	end
 
 	private

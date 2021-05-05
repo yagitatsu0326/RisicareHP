@@ -7,7 +7,7 @@
 				<%= link_to admin_information_path(@information.id), method: :delete, data: {confirm: "削除しますか？"} do %>
 					<p>DELETE</p>
 				<% end %>
-				</div>
+			</div>
 			<div class="info-post-box row">
 				<div class ="col-xs-12">
 					<%= form_with(model: @information, url: admin_information_path(@information.id), method: :patch, local: true) do |f| %>

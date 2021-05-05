@@ -1,38 +1,35 @@
-<div class="row">
+
 	<div class="info-content col-lg-offset-1 col-lg-10 col-xs-12">
-		<div class ="body-box">
-			<div class ="title-box">
-				<span>Risicare</span>
-				<h2>INFORMATION</h2>
-				<% if admin_signed_in? %>
-					<%= link_to new_admin_information_path do %>
-						<p>NEW</p>
-					<% end %>
+		<div class ="title-box">
+			<span>Risicare</span>
+			<h2>INFORMATION</h2>
+			<% if admin_signed_in? %>
+				<%= link_to new_admin_information_path do %>
+					<p>NEW</p>
 				<% end %>
-			</div>
-				<table class ="info-index-box table">
-					<% @informations.each do |information| %>
-				 		<tr>
-							<td>
-				 				<%= link_to information_path(information.id) do %>
-							 		<div class="info-container  row">
-									 	<div class="col-lg-4 col-xs-12">
-									 		<%= attachment_image_tag information, :image, :fill, 150,150, class: "info-image"%>
-									 	</div>
-									 	<div class="info-text col-lg-8 col-xs-12">
-									 		<h3><%= information.title %></h3>
-									 		<p><%= information.body.truncate(70) %></p>
-									 		<p><%= l information.created_at, format: :semi_long %></p>
-									 	</div>
-									 </div>
-								 <% end %>
-							</td>
-						 </tr>
-					<% end %>
-				</table>
-			<div class ="paginate-container col-lg-12">
-				<%= paginate @informations %>
-			</div>s
+			<% end %>
+		</div>
+		<table class ="info-index-box table">
+			<% @informations.each do |information| %>
+		 		<tr>
+					<td>
+		 				<%= link_to information_path(information.id) do %>
+					 		<div class="info-container">
+							 	<div class="col-lg-4 col-xs-12">
+							 		<%= attachment_image_tag information, :image, :fill, 150,150, class: "info-image"%>
+							 	</div>
+							 	<div class="info-text col-lg-8 col-xs-12">
+							 		<h3><%= information.title %></h3>
+							 		<p><%= information.body.truncate(70) %></p>
+							 		<p><%= l information.created_at, format: :semi_long %></p>
+							 	</div>
+							 </div>
+						 <% end %>
+					</td>
+				 </tr>
+			<% end %>
+		</table>
+		<div class ="paginate-container col-lg-12">
+			<%= paginate @informations %>
 		</div>
 	</div>
-</div>

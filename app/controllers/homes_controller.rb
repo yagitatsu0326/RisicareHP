@@ -5,6 +5,6 @@ class HomesController < ApplicationController
 
 	end
 
-	def about
+	def club
 	end
 end

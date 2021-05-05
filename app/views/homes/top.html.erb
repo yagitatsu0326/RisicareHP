@@ -1,34 +1,25 @@
-<div class="main-content col-xs-offset-1 col-xs-10">
-	<div class="row">
-		<div class="col-lg-8 col-md-12 col-sm-12">
-			<%= link_to about_path do %>
+<div class="main-content col-lg-offset-1 col-lg-10 col-xs-12">
+		<div class="col-lg-8 col-md-12 col-xs-12">
+			<%= link_to club_path do %>
 				<div class="top-about-box">
 					<div class="about-text">
-						<h2><ABBR>ABOUT US</ABBR></h2>
-						<p>abcdefghijklmnopqrstu</p>
+						<h2><ABBR>U-15</ABBR></h2>
+						<h2>Risicare basketball club</h2>
+						<p>KYOTO</p>
 					</div>
 				</div>
 			<% end %>
 		</div>
-		<div class="col-lg-4 col-md-12 col-sm-12 clearfix">
-			<%= link_to staff_path do %>
-				<div class="staff-box">
-					<div class="goki-box">
-						<div class="goki-img"></div>
-						<div class="goki-mask-text">
-							<h3>八木　龍弘</h3>
-						</div>
-					</div>
-					<div class="yagi-box">
-						<div class="yagi-img"></div>
-						<div class="yagi-mask-text">
-							<h3>北村　豪希</h3>
-						</div>
+		<div class="col-lg-4 col-md-12 col-xs-12">
+			<%= link_to school_path do %>
+				<div class="school-box">
+					<div class="school-text">
+						<h3>SCHOOL</h3>
 					</div>
 				</div>
 			<% end %>
 		</div>
-		<div class="col-lg-8 col-md-12 col-sm-12">
+		<div class="col-lg-8 col-md-12 col-xs-12">
 			 <div class="info-box">
 			 	<div class="title">
 			 		<h3>Information</h3>
@@ -56,8 +47,16 @@
 
 			 </div>
 		</div>
-
-		<div class="col-lg-4 col-md-12 col-sm-12">
+		<div class="col-lg-4 col-md-12 col-xs-12 clearfix">
+			<%= link_to staff_path do %>
+				<div class="staff-box">
+					<div class="staff-text">
+						<h3>STAFF</h3>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-lg-4 col-md-12 col-xs-12">
 			<div class="event-box">
 				<div class="title">
 					<h3>Schedule</h3>
@@ -68,7 +67,7 @@
 								<td>
 									<%= link_to event_path(event.id) do %>
 										<p>
-											<%= l event.start_time, format: :date %><%= l event.start_time, format: :time %>~<%= l event.end_time, format: :time %> <%= event.title %>		
+											<%= l event.start_time, format: :date %><%= l event.start_time, format: :time %>~<%= l event.end_time, format: :time %> <%= event.title %>
 										</p>	
 							 		<% end %>
 							 	</td>
@@ -98,5 +97,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </div>

@@ -1,38 +1,36 @@
-<div class ="title-content col-md-9 col-lg-10 col-sm-12">
-	<div class="row">
-		<div class="col-xs-12">
-			<div class ="title-box">
-				<span>Risicare</span>
-				<h2>SCHEDULE EDIT</h2>
-				<%= link_to admin_event_path(@event.id), method: :delete, data: {confirm: "削除しますか？"} do %>
-					<p>DELETE</p>
-				<% end %>				
-			</div>
-		</div>
-	</div>
-	<div class ="body-box">
-		<div class ="col-xs-10 col-xs-offset-1">
-			<%= form_with(model: @event, url: admin_event_path(@event.id), method: :patch, local: true) do |f| %>
-				<%= render 'layouts/error_messages', model: f.object %>
-				<div class ="form-group row">
-					<%= f.text_field :title, class: "post-form form-control col-xs-12", placeholder: "タイトル" %>
-				</div>
-				<div class ="form-group row">
-					<%= f.text_field :place, class: "post-form form-control col-xs-12", placeholder: "場所" %>
-				</div>
-				<div class ="form-group row">
-					<%= f.datetime_field :start_time, class: "post-form form-control col-xs-12", placeholder: "開始時間" %>
-				</div>
-				<div class ="form-group row">
-					<%= f.datetime_field :end_time, class: "post-form form-control col-xs-12", placeholder: "終了時間" %>
-				</div>
-				<div class ="form-group row">
-					<%= f.text_area :body, class: "post-form form-control col-xs-12", placeholder: "詳細"%>
-				</div>
-				<div class ="button row">
-					<%= f.submit "更新", class: "btn submit-btn" %>
-				</div>
+<div class ="title-content col-lg-offset-1 col-lg-10 col-xs-12">
+	<div class="body-box">
+		<div class ="title-box">
+			<span>Risicare</span>
+			<h2>SCHEDULE EDIT</h2>
+			<%= link_to admin_event_path(@event.id), method: :delete, data: {confirm: "削除しますか？"} do %>
+				<p>DELETE</p>
 			<% end %>
+		</div>
+		<div class ="body-box">
+			<div class ="col-xs-10 col-xs-offset-1">
+				<%= form_with(model: @event, url: admin_event_path(@event.id), method: :patch, local: true) do |f| %>
+					<%= render 'layouts/error_messages', model: f.object %>
+					<div class ="form-group row">
+						<%= f.text_field :title, class: "post-form form-control col-xs-12", placeholder: "タイトル" %>
+					</div>
+					<div class ="form-group row">
+						<%= f.text_field :place, class: "post-form form-control col-xs-12", placeholder: "場所" %>
+					</div>
+					<div class ="form-group row">
+						<%= f.datetime_field :start_time, class: "post-form form-control col-xs-12", placeholder: "開始時間" %>
+					</div>
+					<div class ="form-group row">
+						<%= f.datetime_field :end_time, class: "post-form form-control col-xs-12", placeholder: "終了時間" %>
+					</div>
+					<div class ="form-group row">
+						<%= f.text_area :body, class: "post-form form-control col-xs-12", placeholder: "詳細"%>
+					</div>
+					<div class ="button row">
+						<%= f.submit "更新", class: "btn submit-btn" %>
+					</div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

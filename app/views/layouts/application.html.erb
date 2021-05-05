@@ -30,17 +30,16 @@
                             <% if admin_signed_in? %>
                                 <ul>
                                     <li><%= link_to "INFORMATION", informations_path %></li>
-                                    <li><%= link_to "SCHEDULE", admin_events_path %></li>
+                                    <li><%= link_to "SCHEDULE", events_path %></li>
                                     <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, data:{confirm:" ログアウトしますか？"} %></li>
                                 </ul>
                             <% else %>
                                 <ul>
-                                    <li><%= link_to "ABOUT", about_path  %></li>
-                                    <li><%= link_to "INFORMATION", informations_path %></li>
-                                    <li><%= link_to "SCHEDULE",  events_path %></li>
+                                    <li><%= link_to "U-15", club_path  %></li>
                                     <li><%= link_to "SCHOOL", school_path  %></li>
+                                    <li><%= link_to "INFORMATION", informations_path %></li>
                                     <li><%= link_to "STAFF", staff_path %></li>
-                                    <li><%= link_to "ADMIN", new_admin_session_path %></li>
+                                    <li><%= link_to "SCHEDULE",  events_path %></li>
                                 </ul>
                             <% end %>
                         </div>
