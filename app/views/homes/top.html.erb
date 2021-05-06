@@ -44,7 +44,9 @@
 						</tr>
 				 	<% end %>
 			 	</table>
-
+			 	<%= link_to informations_path do %>
+			 		<p>more...</p>
+			 	<% end %>
 			 </div>
 		</div>
 		<div class="col-lg-4 col-md-12 col-xs-12 clearfix">
@@ -68,12 +70,15 @@
 									<%= link_to event_path(event.id) do %>
 										<p>
 											<%= l event.start_time, format: :date %><%= l event.start_time, format: :time %>~<%= l event.end_time, format: :time %> <%= event.title %>
-										</p>	
+										</p>
 							 		<% end %>
 							 	</td>
 						 	</tr>
 			 		<% end %>
 				</table>
+			 	<%= link_to events_path do %>
+			 		<p class="more">more...</p>
+			 	<% end %>
 			</div>
 			<div class="sponsor-box">
 				<div class="sponsor-gold">
@@ -95,6 +100,11 @@
 						<div class="kyonoodashi-box"></div>
 					</a>
 				</div>
+			</div>
+			<div class="contact-box">
+				<h3>contact</h3>
+				<p>Risicareに関するご質問はこちらへ</p>
+				<div class="qr-image"></div>
 			</div>
 		</div>
 </div>
