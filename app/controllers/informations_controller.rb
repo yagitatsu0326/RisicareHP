@@ -1,6 +1,6 @@
 class InformationsController < ApplicationController
 	def index
-		@informations = Information.all.page(params[:page]).per(12).order(created_at: :desc)
+		@informations = Information.order(created_at: :desc).page(params[:page]).per(12)
 	end
 
 	def show

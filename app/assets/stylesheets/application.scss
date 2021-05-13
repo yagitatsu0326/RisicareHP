@@ -520,11 +520,35 @@ td.fc-day.fc-widget-content.fc-sat.fc-today {
 
 
 /* --------------------------------　*/
-/* ------------- about ------------　*/
-
-
-
-
+/* ----------- paginate ----------　*/
+.paginate-container {
+	text-align: center;
+		.pagination {
+			margin: 0 auto;
+			color: white;
+			border: none;
+				a {
+					color: black;
+					border: none;
+				}
+				span {
+					color: black;
+					border: none;
+				}
+				a:hover {
+					color: black;
+				}
+				span:hover {
+					color: black;
+					background-color: #4a4a44;
+				}
+				.active a {
+					background-color: #E5FF64;
+					color: #4a4a44;
+					border-radius: 50%;
+				}
+		}
+}
 
 
 
