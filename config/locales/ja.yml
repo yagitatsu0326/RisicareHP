@@ -29,3 +29,11 @@ ja:
         semi_long: "%Y/%m/%d"
         date: "%m/%d(%a)"
         time: "%H:%M"
+
+    views:
+      pagination:
+        first: '最初'
+        last: '最後'
+        previous: '前'
+        next: '次'
+        truncate: '...'

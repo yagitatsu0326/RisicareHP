@@ -15,8 +15,8 @@
 				<h3><%= @information.title %></h3>
 				<p><%= @information.created_at.strftime('%Y/%m/%d ') %></p>
 				<%= attachment_image_tag @information, :image, :fill, 300,300, class: "info-image" %>
-				<div class="info-text-box row">
-					<div class="col-xs-offset-2 col-xs-8">
+				<div class="info-text-box">
+					<div class="col-xs-12">
 						<p><%=safe_join(@information.body.split("\n"),tag(:br))%></p>
 					</div>
 				</div>

@@ -28,3 +28,94 @@
 		height: 100px;
 	}
 }
+
+.event-content{
+		.body-box{
+			background-color: white;
+			height: auto;
+			border-radius: 20px;
+		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		    margin-bottom: 75px;
+		    padding-bottom: 20px;
+				.title-box{
+					margin-top: 80px;
+				}
+				div#calendar{
+					padding: 10px;
+				}
+				.admin-event-new-box {
+					padding: 10px;
+						.control-label {
+							margin-top: 15px;
+						}
+						.form-box {
+							color: black;
+						}
+						textarea#event_body {
+							width: 50%;
+				    		height: 150px;
+						}
+				}
+				.table{
+					text-align: center;
+						tr:hover{
+							background-color: #E5FF64;
+								p {
+									color: black;
+								}
+						}
+				}
+				.event-show-box{
+					text-align: center;
+				}
+				.event-edit-box{
+						.post-form{
+							margin: 10px auto;
+						}
+						.button {
+							text-align: center;
+						}
+				}
+		}
+}
+
+/* -------------------------------　*/
+/* ----------- callender ---------　*/
+td.fc-day.fc-widget-content.fc-sat.fc-today {
+    background: none;
+}
+/* -------------------------------　*/
+@media screen and (max-width: 767px){
+	.event-content{
+		.body-box{
+			width: 100%;
+		}
+	}
+	.pc-area{
+		display: none;
+	}
+}
+@media screen and (min-width: 768px){
+	.phone-area{
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

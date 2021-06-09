@@ -11,9 +11,13 @@
 				<% end %>
 			</div>
 			<div class ="event-show-box row">
-				<h3 class ="col-xs-12"><%= @event.title %> in <%= @event.place %></h3>
+				<h3 class ="col-xs-12"><%= @event.title %><br>
+				  at <%= @event.place %></h3>
 				<h4 class ="col-xs-12"><%= l @event.start_time, format: :date %><%= l @event.start_time, format: :time %>~<%= l @event.end_time, format: :time %></h4>
 				<p class ="col-xs-12"><%=safe_join(@event.body.split("\n"),tag(:br))%></p>
+			 	<%= link_to events_path do %>
+			 		<p class="more">一覧へ戻る</p>
+			 	<% end %>
 			</div>
 		</div>
 	</div>

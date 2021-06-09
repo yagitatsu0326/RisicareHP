@@ -30,10 +30,13 @@
 				 			<td>
 				 				<%= link_to information_path(information.id) do %>
 							 		<div class="info-container row">
-									 	<div class="col-lg-4">
+									 	<div class="col-lg-4 col-xs-12">
 									 		<%= attachment_image_tag information, :image, :fill, 150,150, class: "info-image"%>
 									 	</div>
-									 	<div class="info-text col-lg-8">
+									 	<div class="info-text col-lg-8 col-xs-12">
+										　	<% if @current_time < information.created_at.since(3.day) %>
+										    	<span class="new-mark">new</span>
+										  	<% end %>
 									 		<h3><%= information.title %></h3>
 									 		<p><%= information.body.truncate(70) %></p>
 									 		<p><%= l information.created_at, format: :semi_long %></p>

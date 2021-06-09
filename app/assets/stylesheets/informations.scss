@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* ------------- info ------------　*/
 .info-content{
-	margin-top: 75px;
+	margin: 75px 0;
 	border-radius: 20px;
 	text-align: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -33,6 +33,10 @@
 						}
 						.info-text{
 							text-align: left;
+								.new-mark{
+									background-color: #E5FF64;
+									border-radius: 20px;
+								}
 			    		}
 	    		}
 				tr:hover{

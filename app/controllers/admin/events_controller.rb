@@ -1,5 +1,7 @@
 class Admin::EventsController < ApplicationController
 
+	before_action :authenticate_admin!
+
 	def new
 		@event =Event.new
 	end
