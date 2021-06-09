@@ -1,0 +1,47 @@
+.staff-content{
+	margin-top: 80px;
+		.title-box{
+				span{
+					letter-spacing: .125rem;
+				    color: #818ea3;
+				    font-size: .625rem;
+				}
+				h2{
+					font-size: 1.625rem;
+					font-weight: 500;
+					line-height: 1;
+					margin: 0;
+					padding: 0;
+				}
+		}
+		.staff-index{
+			.goki-box,.yagi-box,.ryuu-box{
+				background-color: white;
+				height: auto;
+				border-radius: 20px;
+			    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+			    padding: 30px 30px;
+			    margin: 10px;
+			}
+			.goki-image{
+				background-image: url("goki.jpg");
+			}
+			.yagi-image{
+				background-image: url("yagi.jpg");
+			}
+			.ryuu-image{
+				background-image: url("ryu.jpg");
+			}
+			.goki-image,.yagi-image,.ryuu-image{
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				margin: 0 auto;
+				height: 150px;
+				width: 150px;
+			}
+			.name-box,.sns-box{
+				text-align: center;
+			}
+		}
+}
