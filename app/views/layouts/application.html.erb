@@ -4,12 +4,49 @@
     <title>RisicareHP</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/91f50bbecd.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <%= yield %>
+  <body data-turbolinks="false">
+        <div class ="container">
+            <header>
+                <div class="row">
+                    <div class="col-xs-offset-1 col-xs-10">
+                        <div class="drawer">
+                            <div class="main-navbar">
+                                <div class="list-logo">
+                                    <%= image_tag "list-logo.png"%><%= link_to "Risicare basketball", root_path, class: "header-text" %>
+                                </div>
+                            </div>
+                            <div class="Toggle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                        </div>
+                        </div>
+                        <div class="menu">
+                            <% if admin_signed_in? %>
+                                <ul>
+                                    <li><%= link_to "INFORMATION", informations_path %></li>
+                                    <li><%= link_to "SCHEDULE", events_path %></li>
+                                    <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, data:{confirm:" ログアウトしますか？"} %></li>
+                                </ul>
+                            <% else %>
+                                <ul>
+                                    <li><%= link_to "U-15", club_path  %></li>
+                                    <li><%= link_to "SCHOOL", school_path  %></li>
+                                    <li><%= link_to "INFORMATION", informations_path %></li>
+                                    <li><%= link_to "STAFF", staff_path %></li>
+                                    <li><%= link_to "SCHEDULE",  events_path %></li>
+                                </ul>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <%= yield %>
+        </div>
   </body>
 </html>

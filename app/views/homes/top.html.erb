@@ -1,0 +1,113 @@
+<div class="main-content col-lg-offset-1 col-lg-10 col-xs-12">
+		<div class="col-lg-8 col-md-12 col-xs-12">
+			<%= link_to club_path do %>
+				<div class="top-about-box">
+					<div class="about-text">
+						<h2><ABBR>U-15</ABBR></h2>
+						<h2>Risicare basketball club</h2>
+						<p>KYOTO</p>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-lg-4 col-md-12 col-xs-12">
+			<%= link_to school_path do %>
+				<div class="school-box">
+					<div class="school-text">
+						<h3>SCHOOL</h3>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-lg-8 col-md-12 col-xs-12">
+			 <div class="info-box">
+			 	<div class="title">
+			 		<h3>Information</h3>
+			 	</div>
+			 	<table class="index-table table">
+				 	<% @informations.each do |information| %>
+				 		<tr>
+				 			<td>
+				 				<%= link_to information_path(information.id) do %>
+							 		<div class="info-container row">
+									 	<div class="col-lg-4 col-xs-12">
+									 		<%= attachment_image_tag information, :image, :fill, 150,150, class: "info-image"%>
+									 	</div>
+									 	<div class="info-text col-lg-8 col-xs-12">
+										　	<% if @current_time < information.created_at.since(3.day) %>
+										    	<span class="new-mark">new</span>
+										  	<% end %>
+									 		<h3><%= information.title %></h3>
+									 		<p><%= information.body.truncate(70) %></p>
+									 		<p><%= l information.created_at, format: :semi_long %></p>
+									 	</div>
+									 </div>
+								 <% end %>
+							 </td>
+						</tr>
+				 	<% end %>
+			 	</table>
+			 	<%= link_to informations_path do %>
+			 		<p>more...</p>
+			 	<% end %>
+			 </div>
+		</div>
+		<div class="col-lg-4 col-md-12 col-xs-12 clearfix">
+			<%= link_to staff_path do %>
+				<div class="staff-box">
+					<div class="staff-text">
+						<h3>STAFF</h3>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-lg-4 col-md-12 col-xs-12">
+			<div class="event-box">
+				<div class="title">
+					<h3>Schedule</h3>
+				</div>
+				<table class="index-table table">
+					<% @events.each do |event| %>
+							<tr>
+								<td>
+									<%= link_to event_path(event.id) do %>
+										<p>
+											<%= l event.start_time, format: :date %><%= l event.start_time, format: :time %>~<%= l event.end_time, format: :time %> <%= event.title %>
+										</p>
+							 		<% end %>
+							 	</td>
+						 	</tr>
+			 		<% end %>
+				</table>
+			 	<%= link_to events_path do %>
+			 		<p class="more">more...</p>
+			 	<% end %>
+			</div>
+			<div class="sponsor-box">
+				<div class="sponsor-gold">
+					<h4><i class="fas fa-circle"></i>Gold Sponsor<i class="fas fa-circle"></i></h4>
+					<a href="https://www.u-fsj.jp">
+						<div class="freestyle-box"></div>
+					</a>
+					<a href="http://www.kyoto-isoi.com/">
+						<div class="isoi-box"></div>
+					</a>
+				</div>
+				<div class="sponsor-silver">
+					<h4><i class="fas fa-circle"></i>Silver Sponsor<i class="fas fa-circle"></i></h4>
+					<div class="kitamurastone-box"></div>
+				</div>
+				<div class="sponsor-bronze">
+					<h4><i class="fas fa-circle"></i>Bronze Sponsor<i class="fas fa-circle"></i></h4>
+					<a href="https://www.morinogi.co.jp/kyono-odashi/">
+						<div class="kyonoodashi-box"></div>
+					</a>
+				</div>
+			</div>
+			<div class="contact-box">
+				<h3>contact</h3>
+				<p>Risicareに関するご質問はこちらへ</p>
+				<div class="qr-image"></div>
+			</div>
+		</div>
+</div>

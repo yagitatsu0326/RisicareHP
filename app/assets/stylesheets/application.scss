@@ -1,0 +1,477 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require fullcalendar
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+*{
+	padding:0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.clearfix::after {
+  	content: "";
+  	display: block;
+  	clor: both;
+}
+html {
+	height: 100%;
+}
+body {
+	background-color: #f5f6f8;
+	color: black;
+	height: 100%;
+		a {
+			color: black;
+		}
+}
+.container{
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 20px;
+	padding-left: 20px;
+	width: 100%;
+	padding: 0;
+	height: auto;
+		a {
+			text-decoration: none;
+		}
+}
+.row {
+	height: 100%;
+}
+.title-box {
+	text-align: center;
+}
+/* ----------  サイドバー ----------　*/
+header{
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	background-color: #e8e8e8;
+	padding: 5px;
+			.drawer{
+				 text-align: center;
+					.main-navbar {
+					     margin-top: 10px;
+					     text-align: center;
+							img {
+								max-width: 25px;
+								line-height: 60px;
+							}
+							.header-text {
+								font-weight: 500;
+								vertical-align: middle;
+								font-size: large;
+							}
+							.header-text:hover{
+								color: black;
+							}
+					}
+			}
+			.Toggle{
+			    display: block;
+			    position: fixed;
+			    width: 50px;
+			    height: 50px;
+			    cursor: pointer;
+			    top: 1%;
+			    right: -1%;
+			    	span{
+					    display: block;
+					    position: absolute;
+					    width: 60%;
+					    border-bottom: solid 4px #333;
+					    -webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
+					    -moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
+					    transition: .35s ease-in-out;			/*変化の速度を指定*/
+			    	}
+			}
+	    	.Toggle span:nth-child(1){
+			    top:5px;
+	    	}
+	    	.Toggle span:nth-child(2){
+	    		top:15px;
+	    	}
+	    	.Toggle span:nth-child(3){
+	    		top:25px;
+	    	}
+			.Toggle.active span:nth-child(1) {
+				top: 18px;
+				/* 1番目のspanをマイナス45度に */
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+			/* 2番目と3番目のspanを45度に */
+			.Toggle.active span:nth-child(2),.Toggle.active span:nth-child(3) {
+				top: 18px;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+			.menu{
+				text-align: center;
+				transition: 0.5s ease;/*滑らかに表示*/
+				-webkit-transform: translateX(100%);/*画面より100%外へ押し出し非表示にさせる*/
+				transform: translateX(-100%);/*右から出す場合は、マイナス100%としてください*/
+				height: 0;
+					ul {
+						list-style: none;
+					}
+			}
+			.menu.open {
+			 -webkit-transform: translateX(0%);
+			 transform: translateX(0%);/*メニューを元の位置へ戻す*/
+			 height: 250px
+
+			}
+			@media screen and (min-width:768px) {
+				.Toggle {
+					display: none;
+				}
+				.menu{
+					width: 100%;
+					-webkit-transform: translateX(0);
+					transform: translateX(0);
+						ul{
+						    display: inline-block;
+
+						}
+						li{
+							float: left;
+							padding: 0 30px;
+							font-weight: 500;
+						}
+				}
+			}
+			@media screen and (max-width: 767px){
+				.menu{
+					li{
+						padding: 10px;
+						font-weight: 500;
+					}
+				}
+				.menu.open{
+					height: 100%;
+				}
+			}
+
+}
+@media screen and (min-width:768px) {
+	header {
+		height: 65px;
+	}
+}
+/* -------------------------------　*/
+/* ------------- top -------------　*/
+.main-content {
+	background: #f5f6f8;
+	margin-top: 75px;
+	margin-bottom: 50px;
+		.title-box{
+			text-align: left;
+				span{
+					letter-spacing: .125rem;
+				    color: #818ea3;
+				    font-size: .625rem;
+				}
+				h2{
+					font-size: 1.625rem;
+					font-weight: 500;
+					line-height: 1;
+					margin: 0;
+					padding: 0;
+				}
+		}
+		.top-about-box {
+			background-image: url("logo2.jpg");
+			background-size: cover;
+			background-position: center;
+			border-radius: 20px;
+			height: 300px;
+			margin-top: 20px;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+				.about-text {
+					width: 100%;
+					height: 300px;
+					background-color: rgba(0, 0, 0, 0.5);
+					text-align: center;
+					padding-top: 115px;
+					color: white;
+					border-radius: 20px;
+    				float: right;
+						h2{
+							margin: 0;
+						}
+				}
+		}
+		.staff-box,.school-box {
+			margin-top: 20px;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+			background-image: url("logo.jpg");
+			height: 300px;
+			width: 100%;
+			background-size: cover;
+			background-position: center;
+			float: left;
+			border-radius: 20px;
+			position: relative;
+						.staff-text,.school-text {
+							width: 100%;
+							height: 300px;
+							background-color: rgba(0, 0, 0, 0.5);
+							text-align: center;
+							padding-top: 115px;
+							color: white;
+							border-radius: 20px;
+		    				float: right;
+								h2{
+									margin: 0;
+								}
+						}
+		}
+		.staff-box{
+			background-image: url("logo2.jpg");
+			height: 200px;
+				.staff-text{
+					height: 200px;
+				}
+		}
+		.info-box{
+			border-radius: 20px;
+			margin-top: 20px;
+			text-align: center;
+		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		    background-color: white;
+		    padding: 10px 0;
+		    	a:hover {
+		    		text-decoration: none;
+		    	}
+				.title{
+				    font-size: .625rem;
+				    text-align: left;
+				     h3{
+				     	padding: 0 10px;
+				     }
+				}
+			    .info-container {
+			    	padding: 10px 0;
+						.info-image{
+							border-radius: 20px;
+						}
+						.info-text{
+							text-align: left;
+						}
+						.new-mark{
+							background-color: #E5FF64;
+							border-radius: 20px;
+						}
+			    }
+				td {
+					padding: 0;
+				}
+				tr:hover{
+					background-color: #E5FF64;
+						h3,p {
+							color: black;
+						}
+				}
+		}
+		.sponsor-box{
+			background-color: white;
+			border-radius: 20px;
+			height: auto;
+			margin-top: 20px;
+		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		    padding: 30px 0;  
+			h4{
+				text-align: center;
+				margin-top: 30px;
+			}
+			.sponsor-gold{
+				h4{
+					margin-top: 0;
+				}
+				i {
+					color: #DBB400;
+				}
+					.freestyle-box{
+						background-image: url("freestyle.jpg");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						height: 150px;
+						margin:  0 auto;
+					}
+					.isoi-box{
+						background-image: url("isoi.jpg");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						height: 150px;
+						margin:  0 auto;
+						width: 70%;
+					}
+			}
+			.sponsor-silver{
+				i {
+					color: #C9CACA; 
+				}
+					.kitamurastone-box{
+						background-image: url("stone.jpg");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						height: 150px;
+						width: 50%;	
+						margin:  0 auto;
+					}	
+			}
+			.sponsor-bronze{
+				i {
+					color: #C9AE5D;
+				}
+					.kyonoodashi-box{
+						background-image: url("kyonoodashi.jpg");
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+						height: 150px;
+						margin:  0 auto;
+					}			
+			}
+		}
+		.event-box{
+			background-color: white;
+			border-radius: 20px;
+			margin-top: 20px;
+		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		    padding: 10px 0;
+				.title{
+						letter-spacing: .125rem;	
+					    font-size: .625rem;
+					     h3{
+					     	padding: 0 10px;
+					     }
+				}
+				tr:hover{
+					background-color: #E5FF64;
+						p {
+							color: black;
+						}
+				}
+				.more{
+					text-align: center;
+				}
+		}
+		.contact-box{
+			background-color: white;
+			border-radius: 20px;
+			margin-top: 20px;
+		    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		    text-align: center;
+		    padding-bottom: 20px;
+		    	.qr-image{
+		    		background-image: url("QRimage.jpg");
+					background-size: contain;
+					background-position: center;
+					background-repeat: no-repeat;
+					height: 150px;
+					margin: 10px 0 20px;
+		    	}
+		}
+}
+
+
+/* -------------------------------　*/
+
+
+
+
+@media screen and (max-width: 480px) {
+/* ------------ ヘッダー -----------　*/
+	.header-list {
+		display: none;
+	}
+/* -------------------------------　*/
+
+/* ------------- top -------------　*/
+	.top-image {
+		margin-top: 20px;
+			img {
+				height: 200px;
+			}
+	}
+}
+/* -------------------------------　*/
+
+/* ------------- error  -----------　*/
+.error-box{
+	ul{
+		list-style: none;
+	}
+}
+
+
+
+
+/* --------------------------------　*/
+/* ----------- paginate ----------　*/
+.paginate-container {
+	text-align: center;
+		.pagination {
+			margin: 0 auto;
+			color: white;
+			border: none;
+				a {
+					color: black;
+					border: none;
+				}
+				span {
+					color: black;
+					border: none;
+				}
+				a:hover {
+					color: black;
+					background-color: white;
+				}
+				span:hover {
+					color: black;
+					background-color: white;
+				}
+				.active a {
+					background-color: #E5FF64;
+					color: #4a4a44;
+					border-radius: 50%;
+				}
+		}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------　*/
