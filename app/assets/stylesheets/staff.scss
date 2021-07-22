@@ -24,13 +24,13 @@
 			    margin: 10px;
 			}
 			.goki-image{
-				background-image: url("goki.jpg");
+				background-image: image-url("goki.jpg");
 			}
 			.yagi-image{
-				background-image: url("yagi.jpg");
+				background-image: image-url("yagi.jpg");
 			}
 			.ryuu-image{
-				background-image: url("ryu.jpg");
+				background-image: image-url("ryu.jpg");
 			}
 			.goki-image,.yagi-image,.ryuu-image{
 				background-size: contain;

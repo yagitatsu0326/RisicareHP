@@ -19,7 +19,7 @@
 	    margin-bottom: 100px;
 		padding: 0;
 			.about-image-box {
-				background-image: url("logo2.jpg");
+				background-image: image-url("logo2.jpg");
 				background-size: cover;
 				background-position: center;
 				border-radius: 20px 20px 0 0;
@@ -47,7 +47,7 @@
 					p{
 						span{
 						font-weight: bold;
-						background:linear-gradient(transparent 70%, #E5FF64 );
+						background: linear-gradient(transparent 70%, #E5FF64 );
 						}
 					}
 					h3{
@@ -87,7 +87,7 @@
 						}
 					}
 					.tshirt-image-box{
-						background-image: url("logo2.jpg");
+						background-image: image-url("logo2.jpg");
 						background-size: cover;
 						background-position: center;
 						box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
